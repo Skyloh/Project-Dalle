@@ -22,6 +22,8 @@ public class BlendWrapper : MonoBehaviour
     // use lateupdate
     // > fine, twist my damn arm.
 
+    // TODO, check to see if adding keyframes for blendshapes in animations does anything
+
 
     [SerializeField] SkinnedMeshRenderer meshRenderer;
     // optimize this TODO

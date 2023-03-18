@@ -94,6 +94,8 @@ public class NPCAnimationBehavior : MonoBehaviour
 
     public void ClearWeights()
     {
+        StopAllCoroutines();
+
         for (int i = 0; i < skinnedMesh.blendShapeCount; i++)
         {
             // meshRenderer.SetBlendShapeWeight(i, 0f);

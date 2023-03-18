@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d22c9a62caf5e4d86fc802d50d4208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LERP: 0.1
+  LERP: 0.0125
   ACCURACY: 0.95
 --- !u!1 &4294607109989514967
 GameObject:
@@ -202,7 +202,7 @@ MonoBehaviour:
   chestAim: {fileID: 369755375729695267}
   wrapper: {fileID: 4619978972051227626}
   ACCURACY: 5
-  BLEND_LERP: 0.1
+  BLEND_LERP: 0.03
 --- !u!114 &528266058985825279
 MonoBehaviour:
   m_ObjectHideFlags: 0
