@@ -1,0 +1,361 @@
+fileFormatVersion: 2
+guid: 7a1a6ba53a12e2744957235832b30998
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: -2645021634625152684
+    second: Base
+  - first:
+      74: 902925083234631824
+    second: RelaxedIdle
+  - first:
+      74: -1721642348152781446
+    second: RelaxedIdleAction
+  - first:
+      74: -734304193006406348
+    second: Armature|SwordIdle
+  - first:
+      74: 2090662922098679866
+    second: Armature|SwordItem
+  - first:
+      74: 8349542763059015795
+    second: Walk
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Base
+      takeName: Armature|Base
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RelaxedIdle
+      takeName: Armature|RelaxedIdle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RelaxedIdleAction
+      takeName: Armature|RelaxedIdleAction
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 130
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: Armature|Walk
+      internalID: 0
+      firstFrame: 30
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: NPC 2(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mesh
+      parentName: NPC 2(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 99.999985, y: 99.999985, z: 99.999985}
+    - name: Armature
+      parentName: NPC 2(Clone)
+      position: {x: -0, y: 4.4653196, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 182.80577, y: 182.80577, z: 182.80577}
+    - name: Waist
+      parentName: Armature
+      position: {x: -0, y: 0.0007886602, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ULeg.L
+      parentName: Waist
+      position: {x: -0.003413797, y: 0.0019530582, z: 0.0010049834}
+      rotation: {x: 0.000000021755753, y: 0.011531509, z: 0.99993354, w: 0.00000013291603}
+      scale: {x: 1, y: 0.99999976, z: 1.0000001}
+    - name: LLeg.L
+      parentName: ULeg.L
+      position: {x: -1.9572252e-10, y: 0.011969044, z: -2.3395721e-11}
+      rotation: {x: -0.00000013753659, y: 0.9995782, z: -0.029042974, w: -0.0000025270747}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: ULeg.R
+      parentName: Waist
+      position: {x: 0.003413797, y: 0.0019530582, z: 0.0010049834}
+      rotation: {x: 0.000000021971871, y: 0.011531509, z: 0.99993354, w: -0.00000013342031}
+      scale: {x: 1, y: 0.99999976, z: 1.0000001}
+    - name: LLeg.R
+      parentName: ULeg.R
+      position: {x: 2.4524105e-10, y: 0.011969044, z: -2.2972894e-11}
+      rotation: {x: 0.00000006267479, y: 0.9995782, z: -0.029042974, w: 0.000005193535}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: LegIK.L
+      parentName: Armature
+      position: {x: -0.0034137967, y: -0.000031065643, z: -0.023175355}
+      rotation: {x: 0.017516525, y: -0.000000029855883, z: -5.2305166e-10, w: 0.9998466}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: PoleTarget.L
+      parentName: Armature
+      position: {x: -0.003413797, y: -0.008243718, z: -0.009966627}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LegIK.R
+      parentName: Armature
+      position: {x: 0.0034137967, y: -0.000031065643, z: -0.023175355}
+      rotation: {x: 0.017516525, y: -0.000000029855883, z: -5.2305166e-10, w: 0.9998466}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: PoleTarget.R
+      parentName: Armature
+      position: {x: 0.003413797, y: -0.008243718, z: -0.009966627}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chest
+      parentName: Armature
+      position: {x: -0, y: 0.0007886601, z: 0.009999997}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: UArm.L
+      parentName: Chest
+      position: {x: -0.008060323, y: 0.0055311695, z: -0.00044085836}
+      rotation: {x: 0.7097957, y: -0.70362836, z: -0.02332014, w: -0.023524525}
+      scale: {x: 1, y: 1, z: 1.0000097}
+    - name: LArm.L
+      parentName: UArm.L
+      position: {x: 7.2967576e-10, y: 0.010037837, z: 2.2921007e-11}
+      rotation: {x: -0.0020735562, y: 0.9992069, z: -0.0397648, w: -0.00015640049}
+      scale: {x: 0.99999994, y: 1.0000005, z: 0.9999997}
+    - name: Hand.L
+      parentName: LArm.L
+      position: {x: 3.351889e-11, y: 0.0078077414, z: -1.0804228e-10}
+      rotation: {x: -0.00000002980229, y: 0.00000039847112, z: -1.1580453e-21, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: Neck
+      parentName: Chest
+      position: {x: -0, y: 0.0069007864, z: -7.4505804e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Head
+      parentName: Neck
+      position: {x: -0, y: 0.0024645685, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: UArm.R
+      parentName: Chest
+      position: {x: 0.008060323, y: 0.0055311695, z: -0.00044085836}
+      rotation: {x: 0.7097958, y: 0.7036283, z: 0.02332011, w: -0.023524493}
+      scale: {x: 1, y: 1, z: 1.0000097}
+    - name: LArm.R
+      parentName: UArm.R
+      position: {x: -5.636414e-10, y: 0.010037837, z: 6.299814e-11}
+      rotation: {x: 0.002073586, y: 0.9992069, z: -0.039764773, w: 0.00015625148}
+      scale: {x: 0.99999994, y: 1.0000005, z: 0.9999997}
+    - name: Hand.R
+      parentName: LArm.R
+      position: {x: 1.9672697e-10, y: 0.007807741, z: -1.3372414e-10}
+      rotation: {x: -0.000000009313247, y: 0.0000003485714, z: -1.7763568e-14, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: ArmIK.L
+      parentName: Armature
+      position: {x: -0.008060322, y: 0.0012295184, z: -0.0022640442}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ArmIK.R
+      parentName: Armature
+      position: {x: 0.008060322, y: 0.0012295184, z: -0.0022640442}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ArmPTarget.L
+      parentName: Armature
+      position: {x: -0.008060322, y: 0.0067128497, z: 0.005543698}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ArmPTarget.R
+      parentName: Armature
+      position: {x: 0.008060322, y: 0.0067128497, z: 0.005543698}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cube
+      parentName: NPC 2(Clone)
+      position: {x: -0.006059705, y: 8.721071, z: 0.49766707}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 99.999985, y: 99.999985, z: 99.999985}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

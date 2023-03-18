@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a28afafa7831b9041b90bcd8412bfb2d, type: 3}
+  m_Name: PlayerData
+  m_EditorClassIdentifier: 
+  MAX_DISTANCE: 2
+  VOLUME: 1
+  TEXT_CRAWL_SPEED: 0.1
+  SENSITIVITY: 350
+  CAN_CAMERA_RAYCAST: 0
+  PAINTINGS:
+  - {fileID: 11400000, guid: c7e5b47caa0dc1944a168e62f013d3d1, type: 2}
+  - {fileID: 11400000, guid: 70efdb3eb0e023c4f9556ceb38d34b38, type: 2}
+  - {fileID: 11400000, guid: c23c750a16c740d4899a270bc49a46dd, type: 2}
