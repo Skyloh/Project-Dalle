@@ -7,7 +7,7 @@ public class TestScript : MonoBehaviour
     public SkinnedMeshRenderer rend;
 
 
-    private void LateUpdate()
+    private void Update()
     {
         rend.SetBlendShapeWeight((int)Random.Range(0f, rend.sharedMesh.blendShapeCount), Random.Range(5f, 100f));
     }

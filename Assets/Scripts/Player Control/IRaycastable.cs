@@ -2,5 +2,5 @@
 
 public interface IRaycastable
 {
-   void OnHit(Transform obj);
+   bool OnHit(Transform obj);
 }

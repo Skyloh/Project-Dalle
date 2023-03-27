@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a28afafa7831b9041b90bcd8412bfb2d, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  MAX_DISTANCE: 2
+  MAX_DISTANCE: 3
   VOLUME: 1
   TEXT_CRAWL_SPEED: 0.1
   SENSITIVITY: 350

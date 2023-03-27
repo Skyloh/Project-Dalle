@@ -16,14 +16,15 @@ public class PaintingScript : MonoBehaviour, IRaycastable
         painting.sprite = paintingSO.painting;
     }
 
-    public void OnHit(Transform source)
+    public bool OnHit(Transform source)
     {
         // source is Camera, and Camera has this component.
         // I didn't want to make it static, so i just did this instead.
         SelectionCanvasScript s = source.GetComponent<SelectionCanvasScript>();
         
-        // TODO: this could be activated twice if clicked fast enough?
         s.StartCanvas(this);
+
+        return false; // stop camera raycasting
     }
 
     public void SetPainting(PaintingSO p)

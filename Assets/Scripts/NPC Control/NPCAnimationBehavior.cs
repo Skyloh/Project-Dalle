@@ -32,7 +32,7 @@ public class NPCAnimationBehavior : MonoBehaviour
     [SerializeField] SkinnedMeshRenderer meshRenderer;
     [SerializeField] Aim headAim;
     [SerializeField] Aim chestAim;
-    [SerializeField] BlendWrapper wrapper;
+    // [SerializeField] BlendWrapper wrapper;
 
 
     [SerializeField] [Range(1f, 100f)] float ACCURACY = 5f;
@@ -44,7 +44,7 @@ public class NPCAnimationBehavior : MonoBehaviour
     Mesh skinnedMesh;
 
     Dictionary<BlendEmotions, int> emotions_to_blendindex;
-    Dictionary<int, float> index_to_weight;
+    // Dictionary<int, float> index_to_weight;
     IEnumerator blendProcess;
 
     private void Awake()
@@ -60,17 +60,19 @@ public class NPCAnimationBehavior : MonoBehaviour
         string[] states = new string[] { "Closed", "Happy", "Sad", "Angry", "WinkLeft" };
 
         emotions_to_blendindex = new Dictionary<BlendEmotions, int>();
-        index_to_weight = new Dictionary<int, float>();
+        // index_to_weight = new Dictionary<int, float>();
 
         for (int i = 0; i < states.Length; i++)
         {
-            int index = skinnedMesh.GetBlendShapeIndex(states[i]);
+            // int index = skinnedMesh.GetBlendShapeIndex(states[i]);
 
-            emotions_to_blendindex.Add((BlendEmotions)i, index);
-            index_to_weight.Add(index, 0);
+            // emotions_to_blendindex.Add((BlendEmotions)i, index);
+            // index_to_weight.Add(index, 0);
+
+            emotions_to_blendindex.Add((BlendEmotions)i, i);
         }
 
-        wrapper.Init(index_to_weight, skinnedMesh.blendShapeCount);
+        // wrapper.Init(index_to_weight, skinnedMesh.blendShapeCount);
     }
 
     public void PlayAnimation(Animations anim)
@@ -98,8 +100,8 @@ public class NPCAnimationBehavior : MonoBehaviour
 
         for (int i = 0; i < skinnedMesh.blendShapeCount; i++)
         {
-            // meshRenderer.SetBlendShapeWeight(i, 0f);
-            wrapper.Push(i, 0f);
+            meshRenderer.SetBlendShapeWeight(i, 0f);
+            // wrapper.Push(i, 0f);
         }
     }
 
@@ -145,23 +147,21 @@ public class NPCAnimationBehavior : MonoBehaviour
     {
         int index = emotions_to_blendindex[blend];
 
-        float current_weight = wrapper.GetWeight(index); // meshRenderer.GetBlendShapeWeight(index);
+        float current_weight = meshRenderer.GetBlendShapeWeight(index); // wrapper.GetWeight(index);
 
         while (Mathf.Abs(current_weight - destination) > ACCURACY)
         {
             current_weight = Mathf.Lerp(current_weight, destination, BLEND_LERP);
 
-            // meshRenderer.SetBlendShapeWeight(index, current_weight);
-            // see BlendWrapper.cs for why this is commented out
+            meshRenderer.SetBlendShapeWeight(index, current_weight);
 
-            wrapper.Push(index, current_weight);
+            // wrapper.Push(index, current_weight);
 
             yield return new WaitForEndOfFrame(); // i dont need Update's fidelity.
         }
 
-        // meshRenderer.SetBlendShapeWeight(index, destination);
-        // see above
+        meshRenderer.SetBlendShapeWeight(index, destination);
 
-        wrapper.Push(index, destination);
+        // wrapper.Push(index, destination);
     }
 }

@@ -10,6 +10,8 @@ public enum NPCStates
 
 public class NPCController : MonoBehaviour
 {
+    [SerializeField] bool LOCKED_TO_IDLE = false;
+    
     NPCAnimationBehavior animBehavior;
     AgentBehavior agentBehavior;
 
@@ -30,11 +32,19 @@ public class NPCController : MonoBehaviour
 
     private void Start()
     {
-        state = NPCStates.Walking;
+        if (!LOCKED_TO_IDLE)
+        {
+            state = NPCStates.Walking;
 
-        process = IEPatrol();
+            process = IEPatrol();
 
-        StartCoroutine(process);
+            StartCoroutine(process);
+        }
+
+        else
+        {
+            animBehavior.PlayAnimation(Animations.Idle);
+        }
     }
 
     void NextState(NPCStates next)
@@ -130,7 +140,7 @@ public class NPCController : MonoBehaviour
     // while walking, if you see anything interesting, look at it.
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Painting"))
+        if (other.CompareTag("Painting") || other.CompareTag("Player"))
         {
             animBehavior.LookAt(other.transform.position, AimTargetOps.Head);
 
@@ -138,9 +148,18 @@ public class NPCController : MonoBehaviour
         }
     }
 
+    // if you are standing still and the player comes to you, keep looking at them.
+    private void OnTriggerStay(Collider other)
+    {
+        if (LOCKED_TO_IDLE && other.CompareTag("Player"))
+        {
+            animBehavior.LookAt(other.transform.position, AimTargetOps.Head);
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Painting"))
+        if (other.CompareTag("Painting") || other.CompareTag("Player"))
         {
             animBehavior.LookAt(Vector3.zero, AimTargetOps.Head);
 

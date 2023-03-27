@@ -17,35 +17,18 @@ public class DialogueScript : MonoBehaviour
     string rendering_text;
     int rend_index;
     int crawl;
-    bool completed;
-    bool rendering;
 
     int current;
 
-    bool can_progress = true;
+    bool completed; // is the text finished rendering
+    bool rendering; // are we in the process of rendering
+
     float lockout;
 
-    private void Update()
+    private void Awake()
     {
-        if (Input.GetAxis("Fire1") > 0 && can_progress)
-        {
-            can_progress = false;
-            lockout = 0f;
-
-            ProgressText();
-        }
-
-        if (!can_progress)
-        {
-            lockout += Time.deltaTime;
-        }
-
-        if (lockout > 0.75f)
-        {
-            can_progress = true;
-        }
+        this.enabled = false;
     }
-
 
     public void Init(string[] text, int ID)
     {
@@ -62,10 +45,29 @@ public class DialogueScript : MonoBehaviour
         rend_index = 0;
 
         rendering = true;
+        completed = false;
 
         canvas.SetActive(true);
 
         StartText();
+    }
+
+    private void FixedUpdate()
+    {
+        // if we have started rendering text, the player wants to progress, and we can progress, progress.
+        if (lockout > 0.75f && rendering && Input.GetAxis("Fire1") > 0)
+        {
+            lockout = 0f;
+
+            ProgressText();
+        }
+
+        // if we are locked out of skipping text, increment the time
+        if (!(lockout > 0.75f))
+        {
+            lockout += Time.fixedDeltaTime;
+        }
+
     }
 
     void StartText()
@@ -74,9 +76,15 @@ public class DialogueScript : MonoBehaviour
         {
             rendering = false;
 
+            data.CAN_CAMERA_RAYCAST = true;
+
             canvas.SetActive(false);
 
             current = -1;
+
+            StopAllCoroutines();
+
+            this.enabled = false;
 
             return;
         }
@@ -91,8 +99,6 @@ public class DialogueScript : MonoBehaviour
         crawl = 0;
 
         StartCoroutine(IETextCrawl());
-
-        completed = false;
     }
 
     IEnumerator IETextCrawl()
@@ -105,31 +111,39 @@ public class DialogueScript : MonoBehaviour
 
         yield return new WaitForSeconds(0.15f);
 
-        while(crawl < rendering_text.Length)
+        while (crawl < rendering_text.Length)
         {
-            int material_index = char_info[crawl].materialReferenceIndex;
-
-            vertColors = info.meshInfo[material_index].colors32;
-
-            int vert_index = char_info[crawl].vertexIndex;
-
-            vertColors[vert_index + 0] = color;
-            vertColors[vert_index + 1] = color;
-            vertColors[vert_index + 2] = color;
-            vertColors[vert_index + 3] = color;
-
-            ui.UpdateVertexData(TMP_VertexDataUpdateFlags.Colors32);
-
-            SFXHandler.PlaySound(crawl_audio, true);
-
-            char character = info.characterInfo[crawl].character;
-
-            if (character.Equals('.'))
+            if (info.characterInfo[crawl].isVisible)
             {
-                yield return new WaitForSeconds(0.25f + data.TEXT_CRAWL_SPEED);
+                int material_index = char_info[crawl].materialReferenceIndex;
+
+                vertColors = info.meshInfo[material_index].colors32;
+
+                int vert_index = char_info[crawl].vertexIndex;
+
+                vertColors[vert_index + 0] = color;
+                vertColors[vert_index + 1] = color;
+                vertColors[vert_index + 2] = color;
+                vertColors[vert_index + 3] = color;
+
+                ui.UpdateVertexData(TMP_VertexDataUpdateFlags.Colors32);
+
+                SFXHandler.PlaySound(crawl_audio, true);
+
+                char character = info.characterInfo[crawl].character;
+
+                if (character.Equals('.'))
+                {
+                    yield return new WaitForSeconds(0.25f + data.TEXT_CRAWL_SPEED);
+                }
+
+                yield return new WaitForSeconds(data.TEXT_CRAWL_SPEED);
             }
 
-            yield return new WaitForSeconds(data.TEXT_CRAWL_SPEED);
+            else
+            {
+                Debug.Log("skipping");
+            }
 
             crawl++;
         }
