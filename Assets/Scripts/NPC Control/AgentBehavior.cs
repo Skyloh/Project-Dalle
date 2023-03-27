@@ -26,6 +26,11 @@ public class AgentBehavior : MonoBehaviour
         StartCoroutine(IEWaitTill());
     }
 
+    public void SetAgentPause(bool paused)
+    {
+        agent.isStopped = paused;
+    }
+
     private IEnumerator IEWaitTill()
     {
         yield return new WaitForSeconds(1f);

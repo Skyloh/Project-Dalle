@@ -13,6 +13,7 @@ public class DialogueScript : MonoBehaviour
     [SerializeField] AudioClip crawl_audio, progress_audio;
 
     string[] all_text;
+    NPCAnimationBehavior speakingNPCAnimationBehavior;
 
     string rendering_text;
     int rend_index;
@@ -30,7 +31,7 @@ public class DialogueScript : MonoBehaviour
         this.enabled = false;
     }
 
-    public void Init(string[] text, int ID)
+    public void Init(string[] text, string[] flair, int ID, NPCAnimationBehavior npc)
     {
         if (ID == current)
         {
@@ -43,6 +44,11 @@ public class DialogueScript : MonoBehaviour
 
         all_text = text;
         rend_index = 0;
+        speakingNPCAnimationBehavior = npc;
+        // TODO work on flairs for dialogue
+        // a flair is a list of strings that includes information of the flair at index
+        // meant to line up with every block of text so every new text block is paired with
+        // an emotion change, an animation trigger, a redirection change, or all of the above.
 
         rendering = true;
         completed = false;
@@ -76,7 +82,7 @@ public class DialogueScript : MonoBehaviour
         {
             rendering = false;
 
-            data.CAN_CAMERA_RAYCAST = true;
+            data.IS_PLAYER_ENABLED = true;
 
             canvas.SetActive(false);
 

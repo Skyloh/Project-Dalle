@@ -10,12 +10,17 @@ public enum NPCStates
 
 public class NPCController : MonoBehaviour
 {
+    [SerializeField] PlayerDataSO data;
     [SerializeField] bool LOCKED_TO_IDLE = false;
     
     NPCAnimationBehavior animBehavior;
     AgentBehavior agentBehavior;
+    DialogueTrigger npcDialogueTrigger;
+
+    SphereCollider interestTrigger;
 
     NPCStates state;
+    NPCStates prior;
 
     [SerializeField] [Range(5f, 35f)] float observation_period = 5f;
 
@@ -28,6 +33,10 @@ public class NPCController : MonoBehaviour
     {
         animBehavior = GetComponent<NPCAnimationBehavior>();
         agentBehavior = GetComponent<AgentBehavior>();
+        npcDialogueTrigger = GetComponent<DialogueTrigger>();
+        interestTrigger = GetComponent<SphereCollider>();
+
+        interest = Vector3.zero;
     }
 
     private void Start()
@@ -49,25 +58,21 @@ public class NPCController : MonoBehaviour
 
     void NextState(NPCStates next)
     {
-        if (process != null)
-        {
-            StopCoroutine(process);
-        }
-
-        state = next;
-
-        switch (next) 
+        // exiting state change
+        switch (state)
         {
             case NPCStates.Observing:
-                process = IEObserve();
+                interestTrigger.enabled = true;
                 break;
 
             case NPCStates.Walking:
-                process = IEPatrol();
+                // pass
                 break;
 
             case NPCStates.Talking:
-                // pass
+                agentBehavior.SetAgentPause(false);
+
+                interestTrigger.enabled = true;
                 break;
 
             default:
@@ -75,42 +80,91 @@ public class NPCController : MonoBehaviour
                 break;
         }
 
-        StartCoroutine(process);
+        if (process != null)
+        {
+            StopCoroutine(process);
+        }
+
+        prior = state;
+        state = next;
+
+        // incoming state change
+        switch (next) 
+        {
+            case NPCStates.Observing:
+                process = IEObserve();
+
+                StartCoroutine(process);
+                break;
+
+            case NPCStates.Walking:
+                process = IEPatrol();
+
+                StartCoroutine(process);
+                break;
+
+            case NPCStates.Talking:
+                process = IETalk();
+
+                StartCoroutine(process);
+                break;
+
+            default:
+                // pass
+                break;
+        }
+    }
+
+    public bool ProcessHit(Transform t)
+    {
+        NextState(NPCStates.Talking);
+
+        // this is a bit messy since i just wanted NextState to call this, but
+        // we can't pass the Transform any other way without adding stupid stuff.
+        // this, by comparison, is less stupid.
+        animBehavior.LookAt(t.position, AimTargetOps.Head);
+        animBehavior.LookAt(t.position - Vector3.up * 0.33f, AimTargetOps.Chest); // offset slightly bc then the NPC looks up too much
+
+        return npcDialogueTrigger.TriggerDialogue(t);
     }
 
     IEnumerator IEObserve()
     {
-        // TODO clean up this method. It's quite messy.
-        // comment it, too.
+        interestTrigger.enabled = false;
 
-        float time = 0f;
+        float time = 0f; // accumulates the time the NPC has been in an observing state
 
-        float value = Random.Range(1f, 3f);
+        float gaze_permanence = Random.Range(1f, 3f); // how long the NPC's gaze should rest on a position in seconds
+
+        // gets a random offset for the NPC to "observe"
         Vector3 offset = transform.forward + Random.Range(-1f, 1f) * Vector3.up + Random.Range(-1, 1f) * transform.right;
 
+        // repeat this behavior while we are still observing
         while (time < observation_period)
         {
+            // look towards the offsetted (scaled) interest point
             animBehavior.LookAt(interest + offset * 3f, AimTargetOps.Both);
 
+            // randomly get a blend emotion to affect, then randomly set its weight
             BlendEmotions e = (BlendEmotions)(int)Random.Range(1f, 5f);
-
             animBehavior.SetBlendWeight(e, Random.Range(50f, 100f));
 
-            yield return new WaitForSeconds(value);
 
-            time += value;
+            yield return new WaitForSeconds(gaze_permanence); // wait the duration of the gaze before continuing
 
-            animBehavior.SetBlendWeight(e, 0f);
+            time += gaze_permanence;  // increment time by how long we waited
 
-            value = Random.Range(1f, 3f);
+            animBehavior.SetBlendWeight(e, 0f); // reset the affected blend weight
 
+            // re-randomize values
+            gaze_permanence = Random.Range(1f, 3f);
             offset = transform.forward + Random.Range(-1f, 1f) * Vector3.up + Random.Range(-1, 1f) * transform.right;
         }
 
-        animBehavior.ClearWeights();
-        animBehavior.PlayAnimation(Animations.Idle);
-        animBehavior.LookAt(Vector3.zero, AimTargetOps.Reset);
+        // return to neutral
+        ResetAnimBehavior();
 
+        // give time for animBehavior to finish up its stuff
         yield return new WaitForSeconds(1f);
 
         NextState(NPCStates.Walking);
@@ -118,23 +172,55 @@ public class NPCController : MonoBehaviour
 
     IEnumerator IEPatrol()
     {
-        Vector3 destination = positions_of_interest[(int)Random.Range(0f, positions_of_interest.Length)];
+        if (agentBehavior.reachedDestination || interest == Vector3.zero)
+        {
+            Vector3 destination = positions_of_interest[(int)Random.Range(0f, positions_of_interest.Length)];
 
-        interest = destination;
+            interest = destination;
 
-        agentBehavior.SetDesination(destination);
+            agentBehavior.SetDesination(destination);
+        }
+
         animBehavior.PlayAnimation(Animations.Walk);
 
         yield return new WaitUntil(() => agentBehavior.reachedDestination);
 
 
-        animBehavior.ClearWeights();
-        animBehavior.PlayAnimation(Animations.Idle);
-        animBehavior.LookAt(Vector3.zero, AimTargetOps.Head);
+        ResetAnimBehavior(AimTargetOps.Head);
 
         yield return new WaitForSeconds(1f);
 
         NextState(NPCStates.Observing);
+    }
+
+    IEnumerator IETalk()
+    {
+        interestTrigger.enabled = false;
+
+        animBehavior.PlayAnimation(Animations.Idle);
+
+        agentBehavior.SetAgentPause(true);
+
+        // i need to wait a second here because there is a race condition.
+        // data.IS_PLAYER_ENABLED is still true at this point, so I have to wait until
+        // the DialogueTrigger finishes setting it to false.
+        //
+        // This is a hacky project :(
+        yield return new WaitForSeconds(1f);
+        yield return new WaitUntil(() => data.IS_PLAYER_ENABLED);
+
+        ResetAnimBehavior();
+
+        yield return new WaitForSeconds(1f);
+
+        NextState(prior);
+    }
+
+    void ResetAnimBehavior(AimTargetOps type = AimTargetOps.Reset)
+    {
+        animBehavior.ClearWeights();
+        animBehavior.PlayAnimation(Animations.Idle);
+        animBehavior.LookAt(Vector3.zero, type);
     }
 
     // while walking, if you see anything interesting, look at it.

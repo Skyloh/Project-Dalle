@@ -28,7 +28,7 @@ public class SelectionCanvasScript : MonoBehaviour
 
     public void StartCanvas(PaintingScript caller)
     {
-        data.CAN_CAMERA_RAYCAST = false;
+        data.IS_PLAYER_ENABLED = false;
 
         target = caller;
 
@@ -60,7 +60,7 @@ public class SelectionCanvasScript : MonoBehaviour
     {
         ToggleCanvas(false);
 
-        data.CAN_CAMERA_RAYCAST = true;
+        data.IS_PLAYER_ENABLED = true;
 
         UIController.ToggleUIFocus(false);
     }

@@ -12,14 +12,14 @@ public class InteractionBehavior : MonoBehaviour
 
     private void Start()
     {
-        data.CAN_CAMERA_RAYCAST = true;
+        data.IS_PLAYER_ENABLED = true;
     }
 
     private void FixedUpdate()
     {
         if (Input.GetAxisRaw("Fire1") > 0f)
         {
-            if (data.CAN_CAMERA_RAYCAST
+            if (data.IS_PLAYER_ENABLED
                 && Physics.Raycast(transform.position, transform.forward, out info, data.MAX_DISTANCE))
             {
                 Collider collider = info.collider;
@@ -31,7 +31,7 @@ public class InteractionBehavior : MonoBehaviour
                         StopCoroutine(process);
                     }
 
-                    data.CAN_CAMERA_RAYCAST = hit.OnHit(transform);
+                    data.IS_PLAYER_ENABLED = hit.OnHit(transform);
 
                     previous = collider.name;
 
@@ -44,7 +44,7 @@ public class InteractionBehavior : MonoBehaviour
 
     IEnumerator IEUnset()
     {
-        yield return new WaitUntil(() => data.CAN_CAMERA_RAYCAST);
+        yield return new WaitUntil(() => data.IS_PLAYER_ENABLED);
         yield return new WaitForSeconds(0.15f);
 
         previous = "";

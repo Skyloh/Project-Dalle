@@ -32,7 +32,6 @@ public class NPCAnimationBehavior : MonoBehaviour
     [SerializeField] SkinnedMeshRenderer meshRenderer;
     [SerializeField] Aim headAim;
     [SerializeField] Aim chestAim;
-    // [SerializeField] BlendWrapper wrapper;
 
 
     [SerializeField] [Range(1f, 100f)] float ACCURACY = 5f;
@@ -44,7 +43,6 @@ public class NPCAnimationBehavior : MonoBehaviour
     Mesh skinnedMesh;
 
     Dictionary<BlendEmotions, int> emotions_to_blendindex;
-    // Dictionary<int, float> index_to_weight;
     IEnumerator blendProcess;
 
     private void Awake()
@@ -60,10 +58,11 @@ public class NPCAnimationBehavior : MonoBehaviour
         string[] states = new string[] { "Closed", "Happy", "Sad", "Angry", "WinkLeft" };
 
         emotions_to_blendindex = new Dictionary<BlendEmotions, int>();
-        // index_to_weight = new Dictionary<int, float>();
 
         for (int i = 0; i < states.Length; i++)
         {
+            // this is all commented out post-maya import because the names got fucked up
+
             // int index = skinnedMesh.GetBlendShapeIndex(states[i]);
 
             // emotions_to_blendindex.Add((BlendEmotions)i, index);
@@ -71,8 +70,6 @@ public class NPCAnimationBehavior : MonoBehaviour
 
             emotions_to_blendindex.Add((BlendEmotions)i, i);
         }
-
-        // wrapper.Init(index_to_weight, skinnedMesh.blendShapeCount);
     }
 
     public void PlayAnimation(Animations anim)

@@ -1542,6 +1542,7 @@ GameObject:
   - component: {fileID: 908842566}
   - component: {fileID: 908842565}
   - component: {fileID: 908842564}
+  - component: {fileID: 908842567}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1768,6 +1769,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &908842567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908842558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f7222fbc380404f8aaa84718f672fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 5a132e262ebcff746af7514c2fb1442d, type: 2}
+  pmScript: {fileID: 908842559}
+  pcScript: {fileID: 963194229}
 --- !u!1 &932550247
 GameObject:
   m_ObjectHideFlags: 0
@@ -2392,10 +2408,20 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 4.19
       objectReference: {fileID: 0}
+    - target: {fileID: 1005441990944887381, guid: ceedacf006abc9b4cb054f0ece30f840,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798714083776937393, guid: ceedacf006abc9b4cb054f0ece30f840,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6729724393421826825, guid: ceedacf006abc9b4cb054f0ece30f840,
         type: 3}
       propertyPath: LOCKED_TO_IDLE
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6729724393421826825, guid: ceedacf006abc9b4cb054f0ece30f840,
         type: 3}

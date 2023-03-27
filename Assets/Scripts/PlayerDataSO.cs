@@ -8,7 +8,7 @@ public class PlayerDataSO : ScriptableObject
     public float TEXT_CRAWL_SPEED = 0.1f;
     public float SENSITIVITY = 0.2f;
 
-    public bool CAN_CAMERA_RAYCAST = true; // hacky solution
+    public bool IS_PLAYER_ENABLED = true; // hacky solution
 
     // list of selectables the player has
     [SerializeField] PaintingSO[] PAINTINGS;

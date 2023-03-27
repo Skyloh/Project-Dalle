@@ -28,12 +28,14 @@ public class PlayerMovement : MonoBehaviour
     // scaled by time and speed
     void Update()
     {
+        
         if (characterController.isGrounded)
         {
             yVelo = 0f;
         }
 
         yVelo -= GRAVITY * Time.deltaTime;
+        
 
         // GetAxis(...) smoothens the value from 0 to 1, resulting in a gradual increase
         // up to the desired value, followed by a decrease. I.e. it's not an instant change.
@@ -48,6 +50,6 @@ public class PlayerMovement : MonoBehaviour
         vec.y = yVelo;
 
         characterController.Move(MOVE_SPEED * Time.deltaTime * vec);
-        // replace with SimpleMove
+        // dont repalce with simplemove because the gravity there is too slow
     }
 }
