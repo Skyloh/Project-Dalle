@@ -6,20 +6,23 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     [SerializeField] Image fillImage;
+    [SerializeField] Image backgroundImage;
 
     public static SceneController instance;
 
     void Start()
     {
-        if (instance != this)
+        if (instance && instance != this)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
 
         else
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+
+            gameObject.SetActive(false);
         }
     }
 
@@ -34,18 +37,25 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene("LoadingScene", LoadSceneMode.Single);
 
-        // yield return new WaitUntil(() => fillImage != null); // bc GetTextElement still needs to run
-
         AsyncOperation load = SceneManager.LoadSceneAsync(build_name, LoadSceneMode.Single);
 
         load.allowSceneActivation = false;
 
-        while (!(load.progress >= 0.98f))
+        fillImage.fillAmount = 0f;
+        backgroundImage.color = Color.black;
+
+        while (fillImage.fillAmount <= 0.95f)
         {
-            fillImage.fillAmount = load.progress;
+            fillImage.fillAmount = Mathf.MoveTowards(fillImage.fillAmount, load.progress, 0.1f);
+            backgroundImage.color = Color.Lerp(backgroundImage.color, Color.white, load.progress * 0.1f);
 
             yield return new WaitForEndOfFrame();
         }
+
+        fillImage.fillAmount = 1f;
+        backgroundImage.color = Color.white;
+
+        yield return new WaitForSeconds(0.25f);
 
         load.allowSceneActivation = true;
 

@@ -28,6 +28,8 @@ public class SelectionCanvasScript : MonoBehaviour
 
     public void StartCanvas(PaintingScript caller)
     {
+        this.enabled = true;
+
         data.IS_PLAYER_ENABLED = false;
 
         target = caller;
@@ -61,6 +63,8 @@ public class SelectionCanvasScript : MonoBehaviour
         ToggleCanvas(false);
 
         data.IS_PLAYER_ENABLED = true;
+
+        this.enabled = false;
 
         UIController.ToggleUIFocus(false);
     }

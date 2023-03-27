@@ -15,7 +15,7 @@ public class UIController : MonoBehaviour
     {
         // we use Raw here because regular getAxis scales with time, which might be 0.
         // i.e. if we use it and we pause, the getAxis always returns 0.
-        if (Input.GetAxisRaw("Cancel") > 0 && !locked)
+        if (!locked && Input.GetAxisRaw("Cancel") > 0)
         {
             locked = true;
 
@@ -42,6 +42,8 @@ public class UIController : MonoBehaviour
     {
         if (state)
         {
+
+            Debug.Log("set");
             Cursor.visible = true;
 
             Cursor.lockState = CursorLockMode.None;
@@ -51,6 +53,8 @@ public class UIController : MonoBehaviour
 
         else
         {
+
+            Debug.Log("unset");
             Cursor.visible = false;
 
             Cursor.lockState = CursorLockMode.Locked;
