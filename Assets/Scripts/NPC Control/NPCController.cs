@@ -10,9 +10,14 @@ public enum NPCStates
 
 public class NPCController : MonoBehaviour
 {
+    public BlendEmotions BlendShapeMood;
+
     [SerializeField] PlayerDataSO data;
     [SerializeField] bool LOCKED_TO_IDLE = false;
-    
+    [SerializeField] [Range(5f, 35f)] float observation_period = 5f;
+    [SerializeField] Vector3[] positions_of_interest;
+    Vector3 interest;
+
     NPCAnimationBehavior animBehavior;
     AgentBehavior agentBehavior;
     DialogueTrigger npcDialogueTrigger;
@@ -21,11 +26,6 @@ public class NPCController : MonoBehaviour
 
     NPCStates state;
     NPCStates prior;
-
-    [SerializeField] [Range(5f, 35f)] float observation_period = 5f;
-
-    [SerializeField] Vector3[] positions_of_interest;
-    Vector3 interest;
 
     IEnumerator process;
 
@@ -230,7 +230,7 @@ public class NPCController : MonoBehaviour
         {
             animBehavior.LookAt(other.transform.position, AimTargetOps.Head);
 
-            animBehavior.SetBlendWeight((BlendEmotions)(int)Random.Range(0f, 5f), Random.Range(50f, 100f));
+            animBehavior.SetBlendWeight(BlendShapeMood, Random.Range(50f, 100f));
         }
     }
 

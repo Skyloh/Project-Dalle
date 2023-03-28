@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MAX_DISTANCE: 3
   VOLUME: 1
-  TEXT_CRAWL_SPEED: 0.1
+  TEXT_CRAWL_SPEED: 0.05
   SENSITIVITY: 350
-  CAN_CAMERA_RAYCAST: 0
+  IS_PLAYER_ENABLED: 1
   PAINTINGS:
   - {fileID: 11400000, guid: c7e5b47caa0dc1944a168e62f013d3d1, type: 2}
   - {fileID: 11400000, guid: 70efdb3eb0e023c4f9556ceb38d34b38, type: 2}

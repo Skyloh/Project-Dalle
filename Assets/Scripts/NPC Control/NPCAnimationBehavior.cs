@@ -45,6 +45,8 @@ public class NPCAnimationBehavior : MonoBehaviour
     Dictionary<BlendEmotions, int> emotions_to_blendindex;
     IEnumerator blendProcess;
 
+    string[] states = new string[] { "closed", "happy", "sad", "angry", "wink" };
+
     private void Awake()
     {
         animator = animatorSource.runtimeAnimatorController;
@@ -54,8 +56,6 @@ public class NPCAnimationBehavior : MonoBehaviour
         // despite the name, the sharedMesh does not share blendshape values
         // among instances of the same object in the scene.
         skinnedMesh = meshRenderer.sharedMesh;
-
-        string[] states = new string[] { "Closed", "Happy", "Sad", "Angry", "WinkLeft" };
 
         emotions_to_blendindex = new Dictionary<BlendEmotions, int>();
 
@@ -79,8 +79,50 @@ public class NPCAnimationBehavior : MonoBehaviour
         animatorSource.SetInteger(stateHash, (int)anim);
     }
 
+    // given a string argument, performs the desired behavior
+    public void Dispatch(string arg)
+    {
+        switch (arg)
+        {
+            case "resetgaze":
+                Debug.Log("resetgaze");
+                break;
+
+            case "gesture":
+                Debug.Log("gesture");
+                break;
+
+            case "idleflair":
+                Debug.Log("idleflair");
+                break;
+
+            default: // must be an emotion => emote Happy 10
+                if (!arg.Contains("emote"))
+                {
+                    Debug.LogError(string.Format("Invalid argument {0}", arg));
+
+                    return;
+                }
+
+                string[] result = arg.Split(' ');
+
+                int index = 0;
+
+                while (!states[index].Equals(result[1].ToLower()))
+                {
+                    index += 1;
+                }
+
+                SetBlendWeight((BlendEmotions)index, int.Parse(result[2]) * 10f);
+
+                break;
+        }
+    }
+
+
     public void SetBlendWeight(BlendEmotions blend, float weight)
     {
+        /*
         if (blendProcess != null)
         {
             StopCoroutine(blendProcess);
@@ -89,6 +131,9 @@ public class NPCAnimationBehavior : MonoBehaviour
         blendProcess = IELerpBlendWeight(blend, weight);
 
         StartCoroutine(blendProcess);
+        */
+
+        StartCoroutine(IELerpBlendWeight(blend, weight));
     }
 
     public void ClearWeights()

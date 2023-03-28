@@ -1,11 +1,12 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class DialogueScript : MonoBehaviour
 {
     [SerializeField] PlayerDataSO data;
+    [SerializeField] SFXHandler sfx; // use the player sound source
     [SerializeField] TextMeshProUGUI ui;
     [SerializeField] GameObject canvas;
 
@@ -13,6 +14,7 @@ public class DialogueScript : MonoBehaviour
     [SerializeField] AudioClip crawl_audio, progress_audio;
 
     string[] all_text;
+    string[] flair;
     NPCAnimationBehavior speakingNPCAnimationBehavior;
 
     string rendering_text;
@@ -43,8 +45,11 @@ public class DialogueScript : MonoBehaviour
         StopAllCoroutines();
 
         all_text = text;
+        this.flair = flair;
         rend_index = 0;
         speakingNPCAnimationBehavior = npc;
+
+        speakingNPCAnimationBehavior.ClearWeights();
         // TODO work on flairs for dialogue
         // a flair is a list of strings that includes information of the flair at index
         // meant to line up with every block of text so every new text block is paired with
@@ -90,12 +95,22 @@ public class DialogueScript : MonoBehaviour
 
             StopAllCoroutines();
 
+            speakingNPCAnimationBehavior.ClearWeights();
+
             this.enabled = false;
 
             return;
         }
 
         rendering_text = all_text[rend_index];
+
+        // why do i have to wrap everything in an array :[
+        string[] flairs = flair[rend_index].Split(new string[] { ", " }, StringSplitOptions.None);
+
+        foreach (string s in flairs)
+        {
+            speakingNPCAnimationBehavior.Dispatch(s.ToLower());
+        }
 
         ui.text = all_text[rend_index];
         ui.color = Color.clear;
@@ -134,7 +149,7 @@ public class DialogueScript : MonoBehaviour
 
                 ui.UpdateVertexData(TMP_VertexDataUpdateFlags.Colors32);
 
-                SFXHandler.PlaySound(crawl_audio, true);
+                sfx.PlaySound(crawl_audio, true);
 
                 char character = info.characterInfo[crawl].character;
 
@@ -148,7 +163,7 @@ public class DialogueScript : MonoBehaviour
 
             else
             {
-                Debug.Log("skipping");
+                // Debug.Log("skipping");
             }
 
             crawl++;
@@ -178,7 +193,7 @@ public class DialogueScript : MonoBehaviour
 
         rend_index++;
 
-        SFXHandler.PlaySound(progress_audio);
+        sfx.PlaySound(progress_audio);
 
         StartText();
     }

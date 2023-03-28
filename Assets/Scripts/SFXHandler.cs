@@ -3,15 +3,12 @@ using UnityEngine;
 
 public class SFXHandler : MonoBehaviour
 {
-    [SerializeField] AudioClip footstep; // the audioclip of the footstep to play
-    [SerializeField] float FOOTSTEP_SPEED = 35f; // how often the footstep thing should be played
     [SerializeField] PlayerDataSO data; // used to get the player's preferred volume
-    static AudioSource source; // the audiosource used to play all sound effects
-
-    float distance = 0f; // accumulator for how far the player has moved
-    Vector3 prior; // the previous position. used in calculating delta
+    AudioSource source; // the audiosource used to play all sound effects
 
     int parity = 1; // swaps sound effect between left and right ear
+
+    float original_pitch;
 
     // Start:
     // assign an Audiosource to source, and the initial position to prior.
@@ -19,32 +16,12 @@ public class SFXHandler : MonoBehaviour
     {
         source = GetComponent<AudioSource>();
 
-        prior = transform.position;
-    }
-
-    // Update Cycle:
-    // increment distance by the sqrDelta of distance multified by a constant to make it more usable
-    // adjust prior to the correct value
-    // if we've moved far enough, reset distance and play the footstep sound effect
-    // this is to replicate a "stride"
-    private void Update()
-    {
-        distance += (transform.position - prior).sqrMagnitude * FOOTSTEP_SPEED;
-
-        prior = transform.position;
-
-        if (distance > 1)
-        {
-            distance = 0;
-
-            PlayFootstepSFX();
-        }
-
+        original_pitch = source.pitch;
     }
 
     // plays the given audioclip with half the volumescale.
     // if the audio should be scrambled, shifts the pitch by a random amount.
-    public static void PlaySound(AudioClip c, bool scramble = false)
+    public void PlaySound(AudioClip c, bool scramble = false)
     {
         source.pitch = 1f;
 
@@ -59,13 +36,19 @@ public class SFXHandler : MonoBehaviour
     // plays the footstep sound effect with a slightly varying pitch and pan at the
     // player's desired volume (given in PlayerDataSO).
     // The varying pitch and pan make the footsteps seem more real.
-    void PlayFootstepSFX()
+    public void PlayFootstepSFX(AudioClip footstep, bool do_pan = false)
     {
-        source.pitch = 1f;
+        source.pitch = original_pitch + Random.Range(-0.25f, 0.75f);
 
-        source.pitch += Random.Range(-0.25f, 0.75f);
+        if (do_pan)
+        {
+            source.panStereo = 0.5f * parity;
+        }
 
-        source.panStereo = 0.5f * parity;
+        else
+        {
+            source.panStereo = 0f;
+        }
 
         parity *= -1;
 
