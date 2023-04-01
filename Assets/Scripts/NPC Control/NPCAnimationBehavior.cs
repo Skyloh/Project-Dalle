@@ -22,7 +22,9 @@ public enum AimTargetOps
 public enum Animations 
 { 
     Idle,
-    Walk
+    Walk,
+    Gesture,
+    Action
 }
 
 
@@ -76,7 +78,26 @@ public class NPCAnimationBehavior : MonoBehaviour
     {
         // BUGGED, doesnt do anything => animatorSource.CrossFade(request, 0.25f);
 
-        animatorSource.SetInteger(stateHash, (int)anim);
+        //animatorSource.SetInteger(stateHash, (int)anim);
+
+        switch (anim)
+        {
+            case Animations.Idle:
+                animatorSource.CrossFade("Idle", 0.2f);
+                //animatorSource.Play("Idle");
+                break;
+
+            case Animations.Gesture:
+                animatorSource.CrossFade("Gesture", 0.2f);
+                break;
+
+            case Animations.Walk:
+                animatorSource.CrossFade("Walk", 0.2f);
+                break;
+
+            default:
+                break;
+        }
     }
 
     // given a string argument, performs the desired behavior
@@ -89,7 +110,7 @@ public class NPCAnimationBehavior : MonoBehaviour
                 break;
 
             case "gesture":
-                Debug.Log("gesture");
+                animatorSource.Play("Gesture");
                 break;
 
             case "idleflair":
