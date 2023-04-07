@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NPC: {fileID: 574611685550273762, guid: ceedacf006abc9b4cb054f0ece30f840, type: 3}
-  NPC_COUNT: 5
+  NPC_COUNT: 3
   ANIMATORS:
   - {fileID: 9100000, guid: 2c0dd031c0638aa4e87dccc27a536862, type: 2}
   - {fileID: 22100000, guid: e308e8a7e866dfc47ae0b416ced2ed3e, type: 2}
@@ -682,6 +682,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Painting (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033106459219792396, guid: 3ffe1bfe30f426043878decb05af24a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7033106459219792435, guid: 3ffe1bfe30f426043878decb05af24a2,
         type: 3}
@@ -1412,7 +1417,7 @@ PrefabInstance:
     - target: {fileID: 574611685550273788, guid: ceedacf006abc9b4cb054f0ece30f840,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0782682e-16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 574611685550273788, guid: ceedacf006abc9b4cb054f0ece30f840,
         type: 3}
@@ -1945,6 +1950,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Painting (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033106459219792396, guid: 3ffe1bfe30f426043878decb05af24a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7033106459219792435, guid: 3ffe1bfe30f426043878decb05af24a2,
         type: 3}
@@ -6474,6 +6484,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Painting (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7033106459219792396, guid: 3ffe1bfe30f426043878decb05af24a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7033106459219792435, guid: 3ffe1bfe30f426043878decb05af24a2,
         type: 3}
       propertyPath: m_RootOrder
@@ -7385,6 +7400,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Painting
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033106459219792396, guid: 3ffe1bfe30f426043878decb05af24a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7033106459219792435, guid: 3ffe1bfe30f426043878decb05af24a2,
         type: 3}

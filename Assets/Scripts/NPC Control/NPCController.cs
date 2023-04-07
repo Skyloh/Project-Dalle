@@ -20,6 +20,8 @@ public class NPCController : MonoBehaviour
     [SerializeField] ObservationTransform[] positions_of_interest;
     ObservationTransform interest;
 
+    int prior_interest = -1;
+
     NPCAnimationBehavior animBehavior;
     AgentBehavior agentBehavior;
     DialogueTrigger npcDialogueTrigger;
@@ -45,9 +47,15 @@ public class NPCController : MonoBehaviour
     {
         LOCKED_TO_IDLE = idle_locked;
 
+        if (idle_locked)
+        {
+            agentBehavior.SetAgentAsCarver();
+        }
+
         animBehavior.SetRuntimeAnimator(rac);
 
         positions_of_interest = ots;
+        
 
         if (!LOCKED_TO_IDLE)
         {
@@ -70,12 +78,22 @@ public class NPCController : MonoBehaviour
 
     void PickAndSet()
     {
-        interest = positions_of_interest[(int)Random.Range(0f, positions_of_interest.Length)];
+        int new_interest;
 
-        Vector3 dest = interest.world_position + interest.painting_normal * 3f;
+        do
+        {
+            new_interest = (int)Random.Range(0f, positions_of_interest.Length);
+
+        } while (prior_interest == new_interest);
+
+        interest = positions_of_interest[new_interest];
+
+        prior_interest = new_interest;
+
+        Vector3 dest = interest.world_position + interest.painting_normal * 3f + Random.insideUnitSphere;
         dest.y = transform.position.y;
 
-        agentBehavior.SetDesination(dest);
+        agentBehavior.SetDesination(dest, interest.painting_normal);
     }
 
     void NextState(NPCStates next)
@@ -214,7 +232,24 @@ public class NPCController : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        NextState(NPCStates.Observing);
+        NPCStates next;
+
+        if (agentBehavior.DidPathTerminateEarly())
+        {
+            // wait for a moment, then repath and continue
+            animBehavior.PlayAnimation(Animations.Idle);
+
+            yield return new WaitForSeconds(1f);
+
+            next = NPCStates.Walking;
+        }
+
+        else
+        {
+            next = NPCStates.Observing;
+        }
+
+        NextState(next);
     }
 
     IEnumerator IETalk()
@@ -261,7 +296,7 @@ public class NPCController : MonoBehaviour
     // if you are standing still and the player comes to you, keep looking at them.
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Painting") || other.CompareTag("Player"))
         {
             animBehavior.LookAt(other.transform.position + Vector3.up * 0.25f, AimTargetOps.Head);
         }
