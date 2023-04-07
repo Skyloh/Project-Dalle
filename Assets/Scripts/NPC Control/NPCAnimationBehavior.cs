@@ -106,15 +106,15 @@ public class NPCAnimationBehavior : MonoBehaviour
         switch (arg)
         {
             case "resetgaze":
-                Debug.Log("resetgaze");
+                LookAt(Vector3.zero, AimTargetOps.Reset);
                 break;
 
             case "gesture":
-                animatorSource.Play("Gesture");
+                animatorSource.CrossFade("Gesture", 0.1f);
                 break;
 
             case "idleflair":
-                Debug.Log("idleflair");
+                animatorSource.CrossFade("Idle Anim", 0.1f);
                 break;
 
             default: // must be an emotion => emote Happy 10

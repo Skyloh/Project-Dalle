@@ -3,6 +3,7 @@ using UnityEngine;
 
 public enum NPCStates
 {
+    Idle,
     Observing,
     Walking,
     Talking
@@ -52,6 +53,8 @@ public class NPCController : MonoBehaviour
 
         else
         {
+            state = NPCStates.Idle;
+
             animBehavior.PlayAnimation(Animations.Idle);
         }
     }
@@ -76,7 +79,7 @@ public class NPCController : MonoBehaviour
                 break;
 
             default:
-                // pass
+                // idle
                 break;
         }
 
@@ -110,7 +113,8 @@ public class NPCController : MonoBehaviour
                 break;
 
             default:
-                // pass
+                // idle
+                animBehavior.PlayAnimation(Animations.Idle);
                 break;
         }
     }
@@ -211,9 +215,8 @@ public class NPCController : MonoBehaviour
 
         ResetAnimBehavior();
 
-        yield return new WaitForSeconds(1f);
 
-        NextState(prior);
+        NextState(LOCKED_TO_IDLE ? NPCStates.Idle : prior);
     }
 
     void ResetAnimBehavior(AimTargetOps type = AimTargetOps.Reset)
@@ -237,7 +240,7 @@ public class NPCController : MonoBehaviour
     // if you are standing still and the player comes to you, keep looking at them.
     private void OnTriggerStay(Collider other)
     {
-        if (LOCKED_TO_IDLE && other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             animBehavior.LookAt(other.transform.position, AimTargetOps.Head);
         }

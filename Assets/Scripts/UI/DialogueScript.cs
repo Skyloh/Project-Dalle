@@ -7,33 +7,33 @@ public class DialogueScript : MonoBehaviour
 {
     [SerializeField] PlayerDataSO data;
     [SerializeField] SFXHandler sfx; // use the player sound source
-    [SerializeField] TextMeshProUGUI ui;
+    [SerializeField] TextMeshProUGUI ui, name_ui;
     [SerializeField] GameObject canvas;
 
     [SerializeField] Color32 color;
     [SerializeField] AudioClip crawl_audio, progress_audio;
 
+    [SerializeField] float LOCKOUT_TIMER = 1f;
+
     string[] all_text;
     string[] flair;
     NPCAnimationBehavior speakingNPCAnimationBehavior;
 
-    string rendering_text;
-    int rend_index;
-    int crawl;
+    int rend_index; // what index are we at in the set of texts
+    int crawl; // what character position are we at in the rendering text
 
-    int current;
+    int current; // who is currently talking (by instanceID)
 
-    bool completed; // is the text finished rendering
-    bool rendering; // are we in the process of rendering
+    bool rendering; // are we in the process of rendering any text
 
-    float lockout;
+    float lockout; // how long the player is locked out of progressing text after clicking.
 
     private void Awake()
     {
         this.enabled = false;
     }
 
-    public void Init(string[] text, string[] flair, int ID, NPCAnimationBehavior npc)
+    public void Init(string[] text, string[] flair, int ID, NPCAnimationBehavior npc, string npc_name)
     {
         if (ID == current)
         {
@@ -44,19 +44,14 @@ public class DialogueScript : MonoBehaviour
 
         StopAllCoroutines();
 
+        name_ui.text = npc_name;
+
         all_text = text;
         this.flair = flair;
         rend_index = 0;
         speakingNPCAnimationBehavior = npc;
 
         speakingNPCAnimationBehavior.ClearWeights();
-        // TODO work on flairs for dialogue
-        // a flair is a list of strings that includes information of the flair at index
-        // meant to line up with every block of text so every new text block is paired with
-        // an emotion change, an animation trigger, a redirection change, or all of the above.
-
-        rendering = true;
-        completed = false;
 
         canvas.SetActive(true);
 
@@ -65,44 +60,36 @@ public class DialogueScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // if we have started rendering text, the player wants to progress, and we can progress, progress.
-        if (lockout > 0.75f && rendering && Input.GetAxis("Fire1") > 0)
+        // if the player wants to progress and we can progress, progress.
+        if (lockout > LOCKOUT_TIMER && Input.GetAxis("Fire1") > 0)
         {
-            lockout = 0f;
-
             ProgressText();
         }
 
         // if we are locked out of skipping text, increment the time
-        if (!(lockout > 0.75f))
+        if (!(lockout > LOCKOUT_TIMER))
         {
             lockout += Time.fixedDeltaTime;
+        }
+
+        // if somehow we're still rendering but the player becomes enabled, stop.
+        if (rendering && data.IS_PLAYER_ENABLED)
+        {
+            Debug.Log("activated");
+            StopDialogue();
         }
 
     }
 
     void StartText()
     {
+        // if we've reached the end of all dialogue
         if (rend_index == all_text.Length)
         {
-            rendering = false;
-
-            data.IS_PLAYER_ENABLED = true;
-
-            canvas.SetActive(false);
-
-            current = -1;
-
-            StopAllCoroutines();
-
-            speakingNPCAnimationBehavior.ClearWeights();
-
-            this.enabled = false;
+            StopDialogue();
 
             return;
         }
-
-        rendering_text = all_text[rend_index];
 
         // why do i have to wrap everything in an array :[
         string[] flairs = flair[rend_index].Split(new string[] { ", " }, StringSplitOptions.None);
@@ -113,17 +100,94 @@ public class DialogueScript : MonoBehaviour
         }
 
         ui.text = all_text[rend_index];
-        ui.color = Color.clear;
+        ui.ForceMeshUpdate();
 
-        ui.ForceMeshUpdate(true);
+        rendering = true;
+        StartCoroutine(IEGradualReveal());
+    }
+
+    IEnumerator IEGradualReveal()
+    {
+        int total_characters = ui.textInfo.characterCount;
+
+        ui.maxVisibleCharacters = 0;
 
         crawl = 0;
 
-        StartCoroutine(IETextCrawl());
+        yield return new WaitForSeconds(0.15f);
+
+        while (crawl < total_characters)
+        {
+            sfx.PlaySound(crawl_audio, true);
+
+            ui.maxVisibleCharacters = crawl + 1;// crawl % (total_characters + 1);
+
+            char character = ui.textInfo.characterInfo[crawl].character;
+
+            if (character.Equals('.'))
+            {
+                yield return new WaitForSeconds(0.25f + data.TEXT_CRAWL_SPEED);
+            }
+
+            yield return new WaitForSeconds(data.TEXT_CRAWL_SPEED);
+
+            crawl += 1;
+        }
+
+        rendering = false;
     }
 
+    public void ProgressText()
+    {
+        lockout = 0f;
+
+        if (rendering)
+        {
+            StopAllCoroutines();
+
+            ui.maxVisibleCharacters = ui.textInfo.characterCount;
+
+            rendering = false;
+
+            return;
+        }
+
+        rend_index++;
+
+        sfx.PlaySound(progress_audio);
+
+        StartText();
+    }
+
+    public void StopDialogue()
+    {
+        rendering = false;
+
+        current = -1;
+        rend_index = 0;
+
+        lockout = 0f;
+
+        data.IS_PLAYER_ENABLED = true;
+
+        canvas.SetActive(false);
+
+        StopAllCoroutines();
+
+        if (speakingNPCAnimationBehavior)
+        {
+            speakingNPCAnimationBehavior.ClearWeights();
+        }
+
+        this.enabled = false;
+    }
+
+    /* DEPRECATED. I found a better solution: https://www.youtube.com/watch?v=IqpgJlhtmoo
     IEnumerator IETextCrawl()
     {
+        crawl = 0;
+        ui.ForceMeshUpdate();
+
         TMP_TextInfo info = ui.textInfo;
 
         TMP_CharacterInfo[] char_info = info.characterInfo;
@@ -172,29 +236,5 @@ public class DialogueScript : MonoBehaviour
 
         completed = true; // true
     }
-
-    public void ProgressText()
-    {
-        if (!rendering)
-        {
-            return;
-        }
-
-        if (!completed)
-        {
-            StopAllCoroutines();
-
-            ui.color = color;
-
-            completed = true;
-
-            return;
-        }
-
-        rend_index++;
-
-        sfx.PlaySound(progress_audio);
-
-        StartText();
-    }
+    */
 }

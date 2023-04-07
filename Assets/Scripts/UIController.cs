@@ -42,8 +42,6 @@ public class UIController : MonoBehaviour
     {
         if (state)
         {
-
-            Debug.Log("set");
             Cursor.visible = true;
 
             Cursor.lockState = CursorLockMode.None;
@@ -53,8 +51,6 @@ public class UIController : MonoBehaviour
 
         else
         {
-
-            Debug.Log("unset");
             Cursor.visible = false;
 
             Cursor.lockState = CursorLockMode.Locked;

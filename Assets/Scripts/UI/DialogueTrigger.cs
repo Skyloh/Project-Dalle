@@ -19,7 +19,7 @@ public class DialogueTrigger : MonoBehaviour
 
         d.enabled = true;
 
-        d.Init(text, flair, GetInstanceID(), GetComponent<NPCAnimationBehavior>());
+        d.Init(text, flair, GetInstanceID(), GetComponent<NPCAnimationBehavior>(), name);
 
         return false; // stop camera from raycasting
     }
