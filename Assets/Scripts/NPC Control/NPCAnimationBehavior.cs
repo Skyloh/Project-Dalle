@@ -39,22 +39,16 @@ public class NPCAnimationBehavior : MonoBehaviour
     [SerializeField] [Range(1f, 100f)] float ACCURACY = 5f;
     [SerializeField] float BLEND_LERP = 0.0125f;
 
-
-    RuntimeAnimatorController animator;
-    int stateHash;
     Mesh skinnedMesh;
 
     Dictionary<BlendEmotions, int> emotions_to_blendindex;
-    IEnumerator blendProcess;
 
     string[] states = new string[] { "closed", "happy", "sad", "angry", "wink" };
 
+    bool resetting_mood = false;
+
     private void Awake()
     {
-        animator = animatorSource.runtimeAnimatorController;
-
-        stateHash = Animator.StringToHash("State");
-
         // despite the name, the sharedMesh does not share blendshape values
         // among instances of the same object in the scene.
         skinnedMesh = meshRenderer.sharedMesh;
@@ -72,6 +66,11 @@ public class NPCAnimationBehavior : MonoBehaviour
 
             emotions_to_blendindex.Add((BlendEmotions)i, i);
         }
+    }
+
+    public void SetRuntimeAnimator(RuntimeAnimatorController rac)
+    {
+        animatorSource.runtimeAnimatorController = rac;
     }
 
     public void PlayAnimation(Animations anim)
@@ -105,6 +104,10 @@ public class NPCAnimationBehavior : MonoBehaviour
     {
         switch (arg)
         {
+            case "":
+                this.ClearWeights();
+                break;
+
             case "resetgaze":
                 LookAt(Vector3.zero, AimTargetOps.Reset);
                 break;
@@ -143,16 +146,12 @@ public class NPCAnimationBehavior : MonoBehaviour
 
     public void SetBlendWeight(BlendEmotions blend, float weight)
     {
-        /*
-        if (blendProcess != null)
+        if (resetting_mood)
         {
-            StopCoroutine(blendProcess);
+            return; // if we are resetting mood, don't care about setting it to something else.
         }
 
-        blendProcess = IELerpBlendWeight(blend, weight);
-
-        StartCoroutine(blendProcess);
-        */
+        StopAllCoroutines();
 
         StartCoroutine(IELerpBlendWeight(blend, weight));
     }
@@ -161,11 +160,7 @@ public class NPCAnimationBehavior : MonoBehaviour
     {
         StopAllCoroutines();
 
-        for (int i = 0; i < skinnedMesh.blendShapeCount; i++)
-        {
-            meshRenderer.SetBlendShapeWeight(i, 0f);
-            // wrapper.Push(i, 0f);
-        }
+        StartCoroutine(IELerpAllToZero());
     }
 
     public void LookAt(Vector3 position, AimTargetOps type)
@@ -226,5 +221,39 @@ public class NPCAnimationBehavior : MonoBehaviour
         meshRenderer.SetBlendShapeWeight(index, destination);
 
         // wrapper.Push(index, destination);
+    }
+
+    IEnumerator IELerpAllToZero()
+    {
+        resetting_mood = true;
+
+        float avg_weight = 100f;
+
+        while (avg_weight > ACCURACY)
+        {
+            avg_weight = 0f;
+
+            for (int i = 0; i < skinnedMesh.blendShapeCount; i++)
+            {
+                float current_weight = meshRenderer.GetBlendShapeWeight(i);
+
+                current_weight = Mathf.Lerp(current_weight, 0f, BLEND_LERP);
+
+                meshRenderer.SetBlendShapeWeight(i, current_weight);
+
+                avg_weight += current_weight;
+            }
+
+            avg_weight /= skinnedMesh.blendShapeCount;
+
+            yield return new WaitForEndOfFrame(); // i dont need Update's fidelity.
+        }
+
+        for (int i = 0; i < skinnedMesh.blendShapeCount; i++)
+        {
+            meshRenderer.SetBlendShapeWeight(i, 0f);
+        }
+
+        resetting_mood = false;
     }
 }

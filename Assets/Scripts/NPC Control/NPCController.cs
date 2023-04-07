@@ -12,12 +12,13 @@ public enum NPCStates
 public class NPCController : MonoBehaviour
 {
     public BlendEmotions BlendShapeMood;
+    int MoodIntensity;
 
     [SerializeField] PlayerDataSO data;
     [SerializeField] bool LOCKED_TO_IDLE = false;
     [SerializeField] [Range(5f, 35f)] float observation_period = 5f;
-    [SerializeField] Vector3[] positions_of_interest;
-    Vector3 interest;
+    [SerializeField] ObservationTransform[] positions_of_interest;
+    ObservationTransform interest;
 
     NPCAnimationBehavior animBehavior;
     AgentBehavior agentBehavior;
@@ -37,13 +38,21 @@ public class NPCController : MonoBehaviour
         npcDialogueTrigger = GetComponent<DialogueTrigger>();
         interestTrigger = GetComponent<SphereCollider>();
 
-        interest = Vector3.zero;
+        MoodIntensity = (int)Random.Range(50f, 100f);
     }
 
-    private void Start()
+    public void InitNPC(ObservationTransform[] ots, RuntimeAnimatorController rac, bool idle_locked)
     {
+        LOCKED_TO_IDLE = idle_locked;
+
+        animBehavior.SetRuntimeAnimator(rac);
+
+        positions_of_interest = ots;
+
         if (!LOCKED_TO_IDLE)
         {
+            PickAndSet();
+
             state = NPCStates.Walking;
 
             process = IEPatrol();
@@ -57,6 +66,16 @@ public class NPCController : MonoBehaviour
 
             animBehavior.PlayAnimation(Animations.Idle);
         }
+    }
+
+    void PickAndSet()
+    {
+        interest = positions_of_interest[(int)Random.Range(0f, positions_of_interest.Length)];
+
+        Vector3 dest = interest.world_position + interest.painting_normal * 3f;
+        dest.y = transform.position.y;
+
+        agentBehavior.SetDesination(dest);
     }
 
     void NextState(NPCStates next)
@@ -141,13 +160,18 @@ public class NPCController : MonoBehaviour
         float gaze_permanence = Random.Range(1f, 3f); // how long the NPC's gaze should rest on a position in seconds
 
         // gets a random offset for the NPC to "observe"
-        Vector3 offset = transform.forward + Random.Range(-1f, 1f) * Vector3.up + Random.Range(-1, 1f) * transform.right;
+        Vector3 offset = 
+            interest.painting_normal 
+            + Random.Range(-1f, 1f) * interest.max_observational_area.y * Vector3.up 
+            + Random.Range(-1, 1f) 
+            * interest.max_observational_area.x 
+            * Vector3.Cross(transform.position - interest.world_position, Vector3.up);
 
         // repeat this behavior while we are still observing
         while (time < observation_period)
         {
             // look towards the offsetted (scaled) interest point
-            animBehavior.LookAt(interest + offset * 3f, AimTargetOps.Both);
+            animBehavior.LookAt(interest.world_position + offset, AimTargetOps.Both);
 
             // randomly get a blend emotion to affect, then randomly set its weight
             BlendEmotions e = (BlendEmotions)(int)Random.Range(1f, 5f);
@@ -176,13 +200,9 @@ public class NPCController : MonoBehaviour
 
     IEnumerator IEPatrol()
     {
-        if (agentBehavior.reachedDestination || interest == Vector3.zero)
+        if (agentBehavior.reachedDestination)
         {
-            Vector3 destination = positions_of_interest[(int)Random.Range(0f, positions_of_interest.Length)];
-
-            interest = destination;
-
-            agentBehavior.SetDesination(destination);
+            PickAndSet();
         }
 
         animBehavior.PlayAnimation(Animations.Walk);
@@ -222,6 +242,7 @@ public class NPCController : MonoBehaviour
     void ResetAnimBehavior(AimTargetOps type = AimTargetOps.Reset)
     {
         animBehavior.ClearWeights();
+        //animBehavior.SetBlendWeight(BlendShapeMood, 0f);
         animBehavior.PlayAnimation(Animations.Idle);
         animBehavior.LookAt(Vector3.zero, type);
     }
@@ -231,9 +252,9 @@ public class NPCController : MonoBehaviour
     {
         if (other.CompareTag("Painting") || other.CompareTag("Player"))
         {
-            animBehavior.LookAt(other.transform.position, AimTargetOps.Head);
+            animBehavior.LookAt(other.transform.position + Vector3.up * 0.25f, AimTargetOps.Head);
 
-            animBehavior.SetBlendWeight(BlendShapeMood, Random.Range(50f, 100f));
+            animBehavior.SetBlendWeight(BlendShapeMood, MoodIntensity);
         }
     }
 
@@ -242,7 +263,7 @@ public class NPCController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            animBehavior.LookAt(other.transform.position, AimTargetOps.Head);
+            animBehavior.LookAt(other.transform.position + Vector3.up * 0.25f, AimTargetOps.Head);
         }
     }
 
@@ -252,7 +273,7 @@ public class NPCController : MonoBehaviour
         {
             animBehavior.LookAt(Vector3.zero, AimTargetOps.Head);
 
-            animBehavior.ClearWeights();
+            animBehavior.SetBlendWeight(BlendShapeMood, 0f);
         }
     }
 }

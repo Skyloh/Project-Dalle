@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 574611685550273788}
   - component: {fileID: 1005441990944887381}
   - component: {fileID: 1383193541394439327}
+  - component: {fileID: 3216621892046711859}
   - component: {fileID: 6729724393421826825}
   - component: {fileID: 7179045071765579296}
   - component: {fileID: 4266082093562816970}
@@ -205,6 +206,22 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!208 &3216621892046711859
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574611685550273762}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 1, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!114 &6729724393421826825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,10 +238,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 5a132e262ebcff746af7514c2fb1442d, type: 2}
   LOCKED_TO_IDLE: 0
   observation_period: 5
-  positions_of_interest:
-  - {x: 4, y: 1, z: -7}
-  - {x: 2.5, y: 1, z: 0}
-  - {x: -8, y: 1, z: 3}
+  positions_of_interest: []
 --- !u!114 &7179045071765579296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,11 +283,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text:
-  - not gonna lie this is totally me when i
-  - wawa
-  - wewa
-  - WOOOOOOOOOOOOOOOOOOOOOOOO
-  flair: []
+  - Yeah, I don't have anything to say.
+  flair:
+  - emote closed 10
 --- !u!114 &758271085449048926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1092,15 +1104,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 574611686100200856}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &5241042332357210186 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -3512101328675021358, guid: ab1bdf737198dbe49a24794fe03baf11,
-    type: 3}
-  m_PrefabInstance: {fileID: 574611686100200856}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4086256470480455509 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4561058818996005581, guid: ab1bdf737198dbe49a24794fe03baf11,
+    type: 3}
+  m_PrefabInstance: {fileID: 574611686100200856}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5241042332357210186 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3512101328675021358, guid: ab1bdf737198dbe49a24794fe03baf11,
     type: 3}
   m_PrefabInstance: {fileID: 574611686100200856}
   m_PrefabAsset: {fileID: 0}
