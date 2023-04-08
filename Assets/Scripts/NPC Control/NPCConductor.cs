@@ -6,6 +6,7 @@ public class NPCConductor : MonoBehaviour
 {
     [SerializeField] GameObject NPC;
     [SerializeField] int NPC_COUNT = 5;
+    [SerializeField] Transform LOCUS;
     [SerializeField] RuntimeAnimatorController[] ANIMATORS;
 
     [SerializeField] string[] names;
@@ -31,7 +32,7 @@ public class NPCConductor : MonoBehaviour
 
         for (int i = 0; i < NPC_COUNT; i += 1)
         {
-            GameObject npc = GameObject.Instantiate(NPC, Vector3.left * Random.Range(0f, 25f), Quaternion.identity);
+            GameObject npc = GameObject.Instantiate(NPC, LOCUS.position + Random.onUnitSphere * Random.Range(0f, 5f), Quaternion.identity);
 
             int name_index = (int)Random.Range(0f, used_names.Count);
 

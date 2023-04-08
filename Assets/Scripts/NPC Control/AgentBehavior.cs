@@ -35,7 +35,12 @@ public class AgentBehavior : MonoBehaviour
 
     public void SetAgentPause(bool paused)
     {
-        agent.isStopped = paused;
+        if (agent.enabled)
+        {
+            agent.isStopped = paused;
+        }
+
+        movement.isPaused = paused;
     }
 
     public void SetAgentAsCarver()

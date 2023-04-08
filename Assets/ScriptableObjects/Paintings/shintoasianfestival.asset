@@ -13,24 +13,6 @@ MonoBehaviour:
   m_Name: shintoasianfestival
   m_EditorClassIdentifier: 
   painting: {fileID: 21300000, guid: 2fccc6073d2cebf46b87415eb72f342c, type: 3}
-  high_keywords:
-  - shinto
-  - asian
-  - festival
-  - green
-  - field
-  - white
-  middle_keywords:
-  - clouds
-  - night
-  - time
-  - paper
-  - lanterns
-  - illuminating
-  low_keywords:
-  - scene
-  - digital
-  - art
-  - visual
-  - novel
-  - background
+  high_keywords: []
+  middle_keywords: []
+  low_keywords: []

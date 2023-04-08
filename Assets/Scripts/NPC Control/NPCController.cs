@@ -103,6 +103,7 @@ public class NPCController : MonoBehaviour
         {
             case NPCStates.Observing:
                 interestTrigger.enabled = true;
+                animBehavior.ClearWeights();
                 break;
 
             case NPCStates.Walking:

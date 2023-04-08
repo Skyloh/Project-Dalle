@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5482df20a3e72342ba48e449ae1608b, type: 3}
-  m_Name: TempleDelphipoint
+  m_Script: {fileID: 11500000, guid: 30ab5977eaef86a4385ce99fef4b1b7a, type: 3}
+  m_Name: TempleDelphi
   m_EditorClassIdentifier: 
-  painting: {fileID: 21300000, guid: a3bdd5281881584469ef29a54a3592d8, type: 3}
-  high_keywords: []
-  middle_keywords: []
-  low_keywords: []
+  description: Temple of Delphi in a valley with a golden view. The temple is portrayed
+    in a bright summer day, colorful even in the far background.

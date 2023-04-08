@@ -7,6 +7,7 @@ public class NPCMoveBehavior : MonoBehaviour
 {
     public bool isEnroute;
     public bool wasPathCanceled;
+    public bool isPaused;
 
     Queue<Vector3> corners;
     Vector3 destination;
@@ -49,7 +50,9 @@ public class NPCMoveBehavior : MonoBehaviour
                 facing.y = 0;
                 facing = facing.normalized;
 
-                transform.forward = facing;
+                StopAllCoroutines();
+
+                StartCoroutine(IERotateTowards());
             }
 
             isEnroute = true;
@@ -57,7 +60,11 @@ public class NPCMoveBehavior : MonoBehaviour
 
         else
         {
-            transform.forward = -end_normal
+            StopAllCoroutines();
+
+            facing = -end_normal;
+
+            StartCoroutine(IERotateTowards());
 
             isEnroute = false;
         }
@@ -67,6 +74,11 @@ public class NPCMoveBehavior : MonoBehaviour
     {
         if (isEnroute)
         {
+            if (isPaused)
+            {
+                return;
+            }
+
             MoveNPC();
 
             if (Physics.Raycast(transform.position + Vector3.up, Vector3.down, out raycastDown, 5f, mask))
@@ -86,6 +98,18 @@ public class NPCMoveBehavior : MonoBehaviour
         }
     }
 
+    IEnumerator IERotateTowards()
+    {
+        while ((transform.forward - facing).sqrMagnitude > 0.5f)
+        {
+            yield return new WaitForEndOfFrame();
+
+            transform.rotation = Quaternion.Lerp(transform.rotation,
+                    Quaternion.LookRotation(facing, Vector3.up), 0.0125f);
+        }
+
+        transform.forward = facing;
+    }
 
     void MoveNPC()
     {
