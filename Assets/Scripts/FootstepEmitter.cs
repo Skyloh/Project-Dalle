@@ -22,14 +22,14 @@ public class FootstepEmitter : MonoBehaviour
         prior = transform.position;
     }
 
-    // Update Cycle:
+    // Fixed Update Cycle:
     // increment distance by the sqrDelta of distance multified by a constant to make it more usable
     // adjust prior to the correct value
     // if we've moved far enough, reset distance and play the footstep sound effect
     // this is to replicate a "stride"
-    private void Update()
+    private void FixedUpdate()
     {
-        distance += (Time.deltaTime * FOOTSTEP_SPEED * (transform.position - prior)).sqrMagnitude;
+        distance += (FOOTSTEP_SPEED * (transform.position - prior)).sqrMagnitude;
 
         prior = transform.position;
 

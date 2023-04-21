@@ -159,6 +159,12 @@ public class NPCController : MonoBehaviour
 
     public bool ProcessHit(Transform t)
     {
+        if (ShouldIgnoreObject(t))
+        {
+            // if we try to talk to them from behind, ignore that
+            return true;
+        }
+
         NextState(NPCStates.Talking);
 
         // this is a bit messy since i just wanted NextState to call this, but
@@ -168,6 +174,16 @@ public class NPCController : MonoBehaviour
         animBehavior.LookAt(t.position - Vector3.up * 0.33f, AimTargetOps.Chest); // offset slightly bc then the NPC looks up too much
 
         return npcDialogueTrigger.TriggerDialogue(t);
+    }
+
+    bool ShouldIgnoreObject(Transform o)
+    {
+        Vector3 other = o.position;
+        other.y = 0;
+
+        other -= transform.position;
+
+        return Vector3.Dot(transform.forward, other) < -0.2f * (interestTrigger.radius * 2f);
     }
 
     IEnumerator IEObserve()
@@ -228,7 +244,6 @@ public class NPCController : MonoBehaviour
 
         yield return new WaitUntil(() => agentBehavior.reachedDestination);
 
-
         ResetAnimBehavior(AimTargetOps.Head);
 
         yield return new WaitForSeconds(1f);
@@ -240,7 +255,7 @@ public class NPCController : MonoBehaviour
             // wait for a moment, then repath and continue
             animBehavior.PlayAnimation(Animations.Idle);
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(Random.Range(0.1f, 1.5f));
 
             next = NPCStates.Walking;
         }
@@ -297,7 +312,7 @@ public class NPCController : MonoBehaviour
     // if you are standing still and the player comes to you, keep looking at them.
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Painting") || other.CompareTag("Player"))
+        if (!ShouldIgnoreObject(other.transform) && (other.CompareTag("Painting") || other.CompareTag("Player")))
         {
             animBehavior.LookAt(other.transform.position + Vector3.up * 0.25f, AimTargetOps.Head);
         }
@@ -305,7 +320,7 @@ public class NPCController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Painting") || other.CompareTag("Player"))
+        if (!ShouldIgnoreObject(other.transform) && (other.CompareTag("Painting") || other.CompareTag("Player")))
         {
             animBehavior.LookAt(Vector3.zero, AimTargetOps.Head);
 

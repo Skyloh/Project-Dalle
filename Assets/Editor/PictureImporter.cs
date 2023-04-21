@@ -8,7 +8,7 @@ public class PictureImporter : AssetPostprocessor
     {
         TextureImporter importer = (TextureImporter)assetImporter;
 
-        importer.textureType = TextureImporterType.Sprite;
+        //importer.textureType = TextureImporterType.Sprite;
 
         importer.maxTextureSize = 1024;
     }

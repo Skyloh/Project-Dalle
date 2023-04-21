@@ -100,12 +100,12 @@ public class NPCMoveBehavior : MonoBehaviour
 
     IEnumerator IERotateTowards()
     {
-        while ((transform.forward - facing).sqrMagnitude > 0.5f)
+        while ((transform.forward - facing).sqrMagnitude > 0.02f)
         {
             yield return new WaitForEndOfFrame();
 
             transform.rotation = Quaternion.Lerp(transform.rotation,
-                    Quaternion.LookRotation(facing, Vector3.up), 0.0125f);
+                    Quaternion.LookRotation(facing, Vector3.up), Time.deltaTime * 3f);
         }
 
         transform.forward = facing;
