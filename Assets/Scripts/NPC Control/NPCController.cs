@@ -50,6 +50,8 @@ public class NPCController : MonoBehaviour
         if (idle_locked)
         {
             agentBehavior.SetAgentAsCarver();
+
+            Destroy(GetComponent<NPCMoveBehavior>());
         }
 
         animBehavior.SetRuntimeAnimator(rac);

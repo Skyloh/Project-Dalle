@@ -20,13 +20,12 @@ public class AgentBehavior : MonoBehaviour
     }
 
     public void SetDesination(Vector3 destination, Vector3 normal)
-    {/*
-        if (!reachedDestination)
+    {
+        if (!movement)
         {
-            Debug.LogWarning("NPC " + this.gameObject.name + " is already in process of moving.");
-
+            Debug.LogWarning("SetDestination called on nonmoving NPC!");
             return;
-        }*/
+        }
 
         StopAllCoroutines();
 
