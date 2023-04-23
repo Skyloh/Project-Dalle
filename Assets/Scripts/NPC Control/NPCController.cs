@@ -92,8 +92,8 @@ public class NPCController : MonoBehaviour
 
         prior_interest = new_interest;
 
-        Vector3 dest = interest.world_position + interest.painting_normal * 3f + Random.insideUnitSphere;
-        dest.y = transform.position.y;
+        Vector3 dest = interest.world_position + interest.painting_normal * 2f + Random.insideUnitSphere;
+        //dest.y = transform.position.y;
 
         agentBehavior.SetDesination(dest, interest.painting_normal);
     }

@@ -8,6 +8,6 @@ public class ChangeScene : MonoBehaviour, IPostConvoEvent
 
     public void Activate(DialogueTrigger npcdt)
     {
-        SceneController.instance.ChangeScene("SampleScene");
+        SceneController.instance.ChangeScene(sceneName);
     }
 }
