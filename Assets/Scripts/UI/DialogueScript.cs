@@ -7,7 +7,9 @@ public class DialogueScript : MonoBehaviour
 {
     [SerializeField] PlayerDataSO data;
     [SerializeField] SFXHandler sfx; // use the player sound source
+
     [SerializeField] TextMeshProUGUI ui, name_ui;
+    [SerializeField] GameObject displayMouse;
     [SerializeField] GameObject canvas;
 
     [SerializeField] Color32 color;
@@ -17,6 +19,7 @@ public class DialogueScript : MonoBehaviour
 
     string[] all_text;
     string[] flair;
+    IPostConvoEvent postConvoEvent;
     NPCAnimationBehavior speakingNPCAnimationBehavior;
 
     int rend_index; // what index are we at in the set of texts
@@ -33,7 +36,7 @@ public class DialogueScript : MonoBehaviour
         this.enabled = false;
     }
 
-    public void Init(string[] text, string[] flair, int ID, NPCAnimationBehavior npc, string npc_name)
+    public void Init(string[] text, string[] flair, int ID, NPCAnimationBehavior npc, string npc_name, IPostConvoEvent pce)
     {
         if (ID == current)
         {
@@ -48,6 +51,9 @@ public class DialogueScript : MonoBehaviour
 
         all_text = text;
         this.flair = flair;
+
+        postConvoEvent = pce;
+
         rend_index = 0;
         speakingNPCAnimationBehavior = npc;
 
@@ -81,10 +87,17 @@ public class DialogueScript : MonoBehaviour
 
     void StartText()
     {
+        displayMouse.SetActive(false);
+
         // if we've reached the end of all dialogue
         if (rend_index == all_text.Length)
         {
             StopDialogue();
+
+            postConvoEvent?.Activate(
+                speakingNPCAnimationBehavior
+                .gameObject
+                .GetComponent<DialogueTrigger>());
 
             return;
         }
@@ -132,6 +145,8 @@ public class DialogueScript : MonoBehaviour
             crawl += 1;
         }
 
+        displayMouse.SetActive(true);
+
         rendering = false;
     }
 
@@ -145,6 +160,8 @@ public class DialogueScript : MonoBehaviour
 
             ui.maxVisibleCharacters = ui.textInfo.characterCount;
 
+            displayMouse.SetActive(true);
+
             rendering = false;
 
             return;
@@ -152,7 +169,7 @@ public class DialogueScript : MonoBehaviour
 
         rend_index++;
 
-        sfx.PlaySound(progress_audio);
+        // sfx.PlaySound(progress_audio);
 
         StartText();
     }

@@ -1049,8 +1049,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 6344bf96fbda94141a525046d088fb23, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1058,7 +1058,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.01
 --- !u!222 &1338366693
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1277,7 +1277,8 @@ MonoBehaviour:
   backgroundImage: {fileID: 2119721819016098845}
   fadeImage: {fileID: 1338366692}
   FADE_ACCURACY: 6
-  FADE_LERP: 0.004
+  FADE_LERP: 1.15
+  data: {fileID: 11400000, guid: 5a132e262ebcff746af7514c2fb1442d, type: 2}
 --- !u!1 &2119721817159978831
 GameObject:
   m_ObjectHideFlags: 0

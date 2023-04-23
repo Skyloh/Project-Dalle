@@ -10,8 +10,10 @@ public class SceneController : MonoBehaviour
     [SerializeField] Image backgroundImage;
     [SerializeField] Image fadeImage;
 
-    [SerializeField, Range(1, 25)] int FADE_ACCURACY = 3;
-    [SerializeField, Range(0.0001f, 0.03f)] float FADE_LERP = 0.0125f;
+    [SerializeField, Range(1, 25)] int FADE_ACCURACY = 2;
+    [SerializeField, Range(0.0001f, 2f)] float FADE_LERP = 0.0125f;
+
+    [SerializeField] PlayerDataSO data;
 
     public static SceneController instance;
 
@@ -47,6 +49,8 @@ public class SceneController : MonoBehaviour
 
     private IEnumerator IEChangeSceneProcess(string build_name)
     {
+        data.IS_PLAYER_ENABLED = false;
+
         yield return StartCoroutine(IEFadeToColor(Color.black, 1f));
 
         SceneManager.LoadScene("LoadingScene", LoadSceneMode.Single);
@@ -78,6 +82,8 @@ public class SceneController : MonoBehaviour
         yield return StartCoroutine(IEFadeToColor(Color.clear, 0.75f));
 
         gameObject.SetActive(false);
+
+        data.IS_PLAYER_ENABLED = true;
     }
 
     private IEnumerator IELerpFillImage()
@@ -115,7 +121,7 @@ public class SceneController : MonoBehaviour
 
         while(!IsSimilarColor(progress, destination))
         {
-            progress = Color.Lerp(progress, destination, FADE_LERP * multiplier);
+            progress = Color.Lerp(progress, destination, FADE_LERP * multiplier * Time.smoothDeltaTime);
 
             fadeImage.color = progress;
 
