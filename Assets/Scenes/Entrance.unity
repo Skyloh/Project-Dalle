@@ -273,7 +273,7 @@ PrefabInstance:
     - target: {fileID: 4402901802265070329, guid: 8ae99731fb9ba844faf7428c0a2501c0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4402901802265070329, guid: 8ae99731fb9ba844faf7428c0a2501c0,
         type: 3}
@@ -601,7 +601,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!1 &1598392616
 GameObject:
@@ -1049,7 +1049,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4219203225499057506, guid: ab1bdf737198dbe49a24794fe03baf11, type: 3}
+  - {fileID: 2100000, guid: 2e9ba3d8d32ae674f989ace647b5f384, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1074,7 +1074,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: -5523277661179574252, guid: ab1bdf737198dbe49a24794fe03baf11, type: 3}
+  m_Mesh: {fileID: -5523277661179574252, guid: 1ab8c04a84b14bd439d540c7def2d8f0, type: 3}
   m_Bones:
   - {fileID: 7581343508065045618}
   - {fileID: 4354473014679984587}
@@ -1245,7 +1245,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8738112063131235394, guid: ab1bdf737198dbe49a24794fe03baf11, type: 3}
+  - {fileID: 2100000, guid: ce667d93f3fa97f41920d287fca87a3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1270,7 +1270,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: -5495902117074765545, guid: ab1bdf737198dbe49a24794fe03baf11, type: 3}
+  m_Mesh: {fileID: -5495902117074765545, guid: 1ab8c04a84b14bd439d540c7def2d8f0, type: 3}
   m_Bones:
   - {fileID: 7581343508065045618}
   - {fileID: 4354473014679984587}
@@ -2805,7 +2805,7 @@ GameObject:
   - component: {fileID: 6990154798534588187}
   - component: {fileID: 6990154798534588186}
   m_Layer: 0
-  m_Name: MayaNPC
+  m_Name: ZNPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

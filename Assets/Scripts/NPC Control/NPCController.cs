@@ -322,7 +322,7 @@ public class NPCController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (!ShouldIgnoreObject(other.transform) && (other.CompareTag("Painting") || other.CompareTag("Player")))
+        if (other.CompareTag("Painting") || other.CompareTag("Player"))
         {
             animBehavior.LookAt(Vector3.zero, AimTargetOps.Head);
 
