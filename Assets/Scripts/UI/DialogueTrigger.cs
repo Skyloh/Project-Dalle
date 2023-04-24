@@ -47,9 +47,14 @@ public class DialogueTrigger : MonoBehaviour
         return false; // stop camera from raycasting
     }
 
-    public void SetText(string[] text, string[] flair)
+    public void SetText(string[] text, string[] flair, IPostConvoEvent[] events = null)
     {
         this.text = text;
         this.flair = flair;
+
+        if (events != null)
+        {
+            this.events = new List<IPostConvoEvent>(events);
+        }
     }
 }

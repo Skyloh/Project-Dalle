@@ -13,6 +13,22 @@ MonoBehaviour:
   m_Name: gardencloudsanime
   m_EditorClassIdentifier: 
   painting: {fileID: 21300000, guid: 34a03244fa9eee642a7b689d9d2ccbd0, type: 3}
-  high_keywords: []
-  middle_keywords: []
-  low_keywords: []
+  high_keywords:
+  - garden
+  - clouds
+  - anime
+  - visual
+  - novel
+  middle_keywords:
+  - background
+  - ground
+  - visible
+  - clear
+  - blue
+  low_keywords:
+  - sky
+  - solid
+  - colors
+  - vibrant
+  - plants
+  - clearing

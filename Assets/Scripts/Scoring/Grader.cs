@@ -14,10 +14,10 @@ public class Grader
             sum += ps.CalculateScore();
 
             max += ps.GetMaxScorePossible();
-
-            Debug.Log(ps.GetMaxScorePossible());
         }
 
-        return (float)sum / max;
+        Debug.Log(sum + " " + max);
+
+        return sum / max;
     }
 }

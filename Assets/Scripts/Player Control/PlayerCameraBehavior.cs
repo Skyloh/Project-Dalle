@@ -5,7 +5,7 @@ public class PlayerCameraBehavior : MonoBehaviour
     float xRot = 0f;
     Transform playerBody;
 
-    [SerializeField] float SENSITIVITY = 10f;
+    [SerializeField] PlayerDataSO data;
 
     void Start()
     {
@@ -18,8 +18,14 @@ public class PlayerCameraBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveX = Input.GetAxis("Mouse X") * SENSITIVITY * Time.deltaTime;
-        float moveY = Input.GetAxis("Mouse Y") * SENSITIVITY * Time.deltaTime;
+        // hacky solution
+        if (Time.timeScale == 0f)
+        {
+            return;
+        }
+
+        float moveX = Input.GetAxis("Mouse X") * data.SENSITIVITY;// * Time.deltaTime;
+        float moveY = Input.GetAxis("Mouse Y") * data.SENSITIVITY;// * Time.deltaTime;
 
         playerBody.Rotate(Vector3.up, moveX);
 

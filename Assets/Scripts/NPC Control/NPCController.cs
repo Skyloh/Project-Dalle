@@ -180,12 +180,11 @@ public class NPCController : MonoBehaviour
 
     bool ShouldIgnoreObject(Transform o)
     {
-        Vector3 other = o.position;
-        other.y = 0;
+        Vector3 dir_to_other = o.position;
+        dir_to_other -= transform.position;
+        dir_to_other.y = 0;
 
-        other -= transform.position;
-
-        return Vector3.Dot(transform.forward, other) < -0.2f * (interestTrigger.radius * 2f);
+        return Vector3.Dot(transform.forward, dir_to_other) < -0.4f * (interestTrigger.radius);
     }
 
     IEnumerator IEObserve()
@@ -303,7 +302,7 @@ public class NPCController : MonoBehaviour
     // while walking, if you see anything interesting, look at it.
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Painting") || other.CompareTag("Player"))
+        if (!ShouldIgnoreObject(other.transform) && (other.CompareTag("Painting") || other.CompareTag("Player")))
         {
             animBehavior.LookAt(other.transform.position + Vector3.up * 0.25f, AimTargetOps.Head);
 

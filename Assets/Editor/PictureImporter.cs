@@ -8,7 +8,7 @@ public class PictureImporter : AssetPostprocessor
     {
         TextureImporter importer = (TextureImporter)assetImporter;
 
-        //importer.textureType = TextureImporterType.Sprite;
+        importer.textureType = TextureImporterType.Sprite;
 
         importer.maxTextureSize = 1024;
     }
@@ -19,6 +19,7 @@ public class PictureImporter : AssetPostprocessor
 
         if (!importer.assetPath.Contains("DALL"))
         {
+            Debug.Log("stopped");
             return;
         }
 
@@ -67,6 +68,7 @@ public class PictureImporter : AssetPostprocessor
         string[] med = split.GetRange(step, step).ToArray();
         string[] low = split.GetRange(step * 2, step + remainder).ToArray();
 
+        Debug.Log("created " + "Assets/ScriptableObjects/Paintings/" + file_name + ".asset");
         AssetDatabase.CreateAsset(p, "Assets/ScriptableObjects/Paintings/" + file_name + ".asset");
 
 
@@ -78,6 +80,8 @@ public class PictureImporter : AssetPostprocessor
         p.high_keywords = high;
         p.middle_keywords = med;
         p.low_keywords = low;
+
+        Debug.Log(p.high_keywords.Length + p.middle_keywords.Length + p.low_keywords.Length);
 
         //so.FindProperty("ss").stringValue = "SDSDSD";
 
