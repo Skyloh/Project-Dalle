@@ -10,7 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30ab5977eaef86a4385ce99fef4b1b7a, type: 3}
-  m_Name: TempleDelphi
+  m_Name: artsypicturepainting
   m_EditorClassIdentifier: 
-  description: Temple of Delphi in a valley with a golden view. The temple is portrayed
-    in a bright summer day, colorful even in the far background.
+  description: A black mountain, night, solemn castle, blue, image, clear, sky, starry.

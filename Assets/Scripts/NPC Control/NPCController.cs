@@ -43,7 +43,7 @@ public class NPCController : MonoBehaviour
         MoodIntensity = (int)Random.Range(50f, 100f);
     }
 
-    public void InitNPC(ObservationTransform[] ots, RuntimeAnimatorController rac, bool idle_locked)
+    public void InitNPC(ObservationTransform[] ots, DialoguePack pack, RuntimeAnimatorController rac, bool idle_locked)
     {
         LOCKED_TO_IDLE = idle_locked;
 
@@ -54,10 +54,14 @@ public class NPCController : MonoBehaviour
             Destroy(GetComponent<NPCMoveBehavior>());
         }
 
+        BlendShapeMood = (BlendEmotions)(int)Random.Range(0f, 5.95f);
+
         animBehavior.SetRuntimeAnimator(rac);
 
         positions_of_interest = ots;
-        
+
+        npcDialogueTrigger.SetText(pack.dialogue, pack.flair, 
+            pack.source != null ? pack.source.GetComponents<IPostConvoEvent>() : null);
 
         if (!LOCKED_TO_IDLE)
         {

@@ -34,6 +34,8 @@ public class SelectionCanvasScript : MonoBehaviour
 
         target = caller;
 
+        placard_text.text = caller.GetCurrentPlacardText();
+
         currently_displaying_index = 0;
 
         UpdateUI();

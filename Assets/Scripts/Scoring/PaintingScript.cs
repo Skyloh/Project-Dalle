@@ -34,6 +34,11 @@ public class PaintingScript : MonoBehaviour, IRaycastable
         painting.sprite = p.painting;
     }
 
+    public string GetCurrentPlacardText()
+    {
+        return placardSO.description;
+    }
+
     public void SetPlacard(PlacardSO p)
     {
         placardSO = p;

@@ -14,19 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   painting: {fileID: 21300000, guid: a3bdd5281881584469ef29a54a3592d8, type: 3}
   high_keywords:
-  - Temple
-  - Delphi
-  - point
-  - view
+  - ruins
+  - vibrant
+  - mountain
   middle_keywords:
-  - from
-  - front
-  - temple
-  - visual
+  - forest
+  - light
+  - plants
   low_keywords:
-  - novel
-  - background
-  - summer
-  - day
-  - bright
-  - colorful
+  - sky
+  - painting

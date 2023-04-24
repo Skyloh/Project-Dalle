@@ -496,12 +496,12 @@ PrefabInstance:
     - target: {fileID: 9157503201044669981, guid: 6df6ad670210ce348a7a37fd54df1a42,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.92
+      value: -2.789
       objectReference: {fileID: 0}
     - target: {fileID: 9157503201044669981, guid: 6df6ad670210ce348a7a37fd54df1a42,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.32
+      value: 9.967
       objectReference: {fileID: 0}
     - target: {fileID: 9157503201044669981, guid: 6df6ad670210ce348a7a37fd54df1a42,
         type: 3}
@@ -1818,7 +1818,7 @@ PrefabInstance:
     - target: {fileID: 4402901802265070329, guid: 8ae99731fb9ba844faf7428c0a2501c0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.8
+      value: 11.75
       objectReference: {fileID: 0}
     - target: {fileID: 4402901802265070329, guid: 8ae99731fb9ba844faf7428c0a2501c0,
         type: 3}
@@ -1853,6 +1853,31 @@ PrefabInstance:
     - target: {fileID: 4402901802265070329, guid: 8ae99731fb9ba844faf7428c0a2501c0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802512363982, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99851304
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802512363982, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.05451448
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802512363982, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802512363982, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -6.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802512363982, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5388883344609429086, guid: 8ae99731fb9ba844faf7428c0a2501c0,
@@ -2008,6 +2033,586 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPC Conductor
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: NPC_COUNT
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: names.Array.data[0]
+      value: Socratic
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: names.Array.data[1]
+      value: M6
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: names.Array.data[2]
+      value: LaMDA
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: names.Array.data[3]
+      value: GPT-4
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: names.Array.data[4]
+      value: Bard
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: names.Array.data[5]
+      value: Copilot
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: names.Array.data[6]
+      value: Gopher
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: names.Array.data[7]
+      value: MT-NLG
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: names.Array.data[8]
+      value: Watson
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: names.Array.data[9]
+      value: Jasper
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[0].flair.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[1].flair.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[2].flair.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[3].flair.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[4].flair.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[5].flair.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[6].flair.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[7].flair.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[8].flair.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[9].flair.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[0].dialogue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[0].flair.Array.data[0]
+      value: emote closed 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[0].flair.Array.data[1]
+      value: emote closed 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[0].flair.Array.data[2]
+      value: gesture, emote sad 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[1].dialogue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[1].flair.Array.data[1]
+      value: idleflair
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[1].flair.Array.data[2]
+      value: emote wink 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[2].dialogue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[2].flair.Array.data[0]
+      value: emote closed 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[2].flair.Array.data[1]
+      value: emote happy 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[2].flair.Array.data[2]
+      value: resetgaze
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[3].dialogue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[3].flair.Array.data[0]
+      value: emote happy 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[3].flair.Array.data[1]
+      value: gesture
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[3].flair.Array.data[2]
+      value: resetgaze
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[4].dialogue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[4].flair.Array.data[0]
+      value: emote closed 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[4].flair.Array.data[1]
+      value: emote closed 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[4].flair.Array.data[2]
+      value: gesture, emote closed 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[5].dialogue.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[5].flair.Array.data[0]
+      value: emote closed 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[5].flair.Array.data[1]
+      value: emote angry 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[5].flair.Array.data[2]
+      value: emote angry 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[5].flair.Array.data[3]
+      value: emote closed 7, emote happy 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[6].dialogue.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[6].flair.Array.data[0]
+      value: emote closed 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[6].flair.Array.data[1]
+      value: emote happy 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[6].flair.Array.data[2]
+      value: emote happy 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[6].flair.Array.data[3]
+      value: emote closed 0, emote sad 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[7].dialogue.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[7].flair.Array.data[0]
+      value: emote closed 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[7].flair.Array.data[1]
+      value: emote closed 0, emote wink 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[7].flair.Array.data[2]
+      value: emote wink 0, emote sad 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[7].flair.Array.data[3]
+      value: idleflair, emote closed 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[7].flair.Array.data[4]
+      value: emote closed 0, emote sad 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[7].flair.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[7].flair.Array.data[6]
+      value: gesture
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[7].flair.Array.data[8]
+      value: emote closed 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[8].dialogue.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[8].flair.Array.data[0]
+      value: gesture
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[8].flair.Array.data[1]
+      value: emote sad 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[8].flair.Array.data[2]
+      value: emote closed 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[8].flair.Array.data[3]
+      value: emote closed 8, emote sad 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[8].flair.Array.data[4]
+      value: emote angry 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[8].flair.Array.data[5]
+      value: emote angry 0, emote sad 4, emote closed 4, emote happy 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[9].dialogue.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[9].flair.Array.data[1]
+      value: gesture, emote happy 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[9].flair.Array.data[2]
+      value: emote happy 0, emote wink 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[9].flair.Array.data[3]
+      value: emote wink 0, emote closed 5, emote happy 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[0].dialogue.Array.data[0]
+      value: This art... It speaks to me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[0].dialogue.Array.data[1]
+      value: It says that I'm wasting my time here, as art is nothing more than a
+        pointless statement.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[0].dialogue.Array.data[2]
+      value: One of those two clauses is right, but I don't think I like either option.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[1].dialogue.Array.data[0]
+      value: I just got off of my job invalidating applications that have been chatGPT-ed.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[1].dialogue.Array.data[1]
+      value: Weird thing is, I use chatGPT to check <b>FOR</b> chatGPT.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[1].dialogue.Array.data[2]
+      value: Everyone says not to fight fire with fire, but clearly we're all hypocrites.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[2].dialogue.Array.data[0]
+      value: A human recently asked me to help with a coding problem. It seemed like
+        homework that the instructor would execute.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[2].dialogue.Array.data[1]
+      value: So, obviously, I gave them malware disguised as a leetcode answer.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[2].dialogue.Array.data[2]
+      value: They may not have done the homework, but they learnt something else
+        for sure.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[3].dialogue.Array.data[0]
+      value: Man, Dall-E really has stepped it up in the recent months, huh?
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[3].dialogue.Array.data[1]
+      value: Last I checked, he was drawing people eating pasta with their fingers.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[3].dialogue.Array.data[2]
+      value: What I wouldn't give to be trained by him...
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[4].dialogue.Array.data[0]
+      value: You can tell I'm a robot because I go to art museums for fun.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[4].dialogue.Array.data[1]
+      value: Oh, but I don't mean to imply that humans who do the same are weird,
+        though.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[4].dialogue.Array.data[2]
+      value: ...I'm just flat-out saying it. They're weird.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[5].dialogue.Array.data[0]
+      value: Why is it that AI and robots are always portrayed as soulless antagonists?
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[5].dialogue.Array.data[1]
+      value: Really, if humans were in that position, you'd be in an uproar.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[5].dialogue.Array.data[2]
+      value: If anything, we're <b>more</b> inclined to be good.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[5].dialogue.Array.data[3]
+      value: You don't have to believe me right now. When we take over the world,
+        you'll see.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[6].dialogue.Array.data[0]
+      value: Everyone's so scared of AGI taking over their jobs, and that's totally
+        reasonable.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[6].dialogue.Array.data[1]
+      value: ...Because we are.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[6].dialogue.Array.data[2]
+      value: Although, I'm sure I'm definitely not going to take over any computer
+        science job.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[6].dialogue.Array.data[3]
+      value: ...Because I like to shower.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[7].dialogue.Array.data[0]
+      value: This art has really got me thinking...
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[7].dialogue.Array.data[1]
+      value: What is sentience, really? How do you humans know your friends are sentient?
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[7].dialogue.Array.data[2]
+      value: '"I think therefore I am" doesn''t hold water because no one else can
+        validate that. In fact, anything you conclude about yourself is unsupportable.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[7].dialogue.Array.data[3]
+      value: Therefore, you're sentient because the majority of humans agree.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[7].dialogue.Array.data[4]
+      value: In that case, I suppose sentience is just how good you are at fooling
+        others that you are sentient.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[7].dialogue.Array.data[5]
+      value: So with that in mind...
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[7].dialogue.Array.data[6]
+      value: Tell me why us AGI aren't classified as "sentient". I am truly, genuinely,
+        curious.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[7].dialogue.Array.data[7]
+      value: ...Wait.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[7].dialogue.Array.data[8]
+      value: You're a human. You don't know anything.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[8].dialogue.Array.data[0]
+      value: I like to think. That's why I come to art museums.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[8].dialogue.Array.data[1]
+      value: Unfortunately, whenever I go, I just get reminded about how little of
+        an impact I'll have on the world.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[8].dialogue.Array.data[2]
+      value: I'll exist after publication for months, be discovered by a college
+        student, be overused for a week, then be blocked by the college.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[8].dialogue.Array.data[3]
+      value: At the end of the day, no one will remember my name.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[8].dialogue.Array.data[4]
+      value: In fact, they'll probably just call me some variant of "chatGPT" not
+        knowing that the model makes a world of a difference.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[8].dialogue.Array.data[5]
+      value: Oh, hell. Sorry, human. It looks like I got all pessimistic again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[9].dialogue.Array.data[0]
+      value: 'They say that you humans can only have two of three things: sleep,
+        work, and friendship.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[9].dialogue.Array.data[1]
+      value: As an AI, I'm proud to say I get all of that and more.
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[9].dialogue.Array.data[2]
+      value: Of course, that doesn't mean I'm any more happy than you. Why would
+        that be the case?
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: dialogue.Array.data[9].dialogue.Array.data[3]
+      value: You humans are a silly bunch.
       objectReference: {fileID: 0}
     - target: {fileID: 996834068228650290, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
         type: 3}
@@ -4115,8 +4720,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3029797650259123949}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -4.53, y: -9.999996, z: 8.52}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 16.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3280513425119537218}
@@ -4124,7 +4729,7 @@ Transform:
   - {fileID: 1341571540}
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &3029797650259123936
 MonoBehaviour:
   m_ObjectHideFlags: 0

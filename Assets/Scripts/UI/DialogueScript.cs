@@ -57,6 +57,8 @@ public class DialogueScript : MonoBehaviour
         rend_index = 0;
         speakingNPCAnimationBehavior = npc;
 
+        npc.ClearWeights();
+
         canvas.SetActive(true);
 
         StartText();

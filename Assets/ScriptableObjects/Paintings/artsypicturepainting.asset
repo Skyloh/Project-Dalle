@@ -9,9 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ab5977eaef86a4385ce99fef4b1b7a, type: 3}
-  m_Name: gardencloudsanime
+  m_Script: {fileID: 11500000, guid: d5482df20a3e72342ba48e449ae1608b, type: 3}
+  m_Name: artsypicturepainting
   m_EditorClassIdentifier: 
-  description: garden in clouds with a red torii gate far away in the background,
-    anime visual novel background, ground is visible, clear blue sky, solid colors,
-    vibrant
+  painting: {fileID: 0}
+  high_keywords:
+  - castle
+  - solemn
+  - night
+  middle_keywords:
+  - black
+  - building
+  - mountain
+  low_keywords:
+  - image
+  - painting
+  - blue

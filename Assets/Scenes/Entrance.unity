@@ -3304,13 +3304,74 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text:
-  - Yeah, I'm Dall-E.
-  - ...What's it to you?
-  - YOU'RE just a human. Buzz off.
+  - Mh? What do you want?
+  - If it involves academic dishonesty, you can buzz right off. I'm through assisting
+    you headless bozos.
+  - ...Wait.
+  - That unkempt look... That posture...
+  - Sorry, I had you for a deepfake human! I really can't tell these days...
+  - Authentic meatbags are so few and far between it's safer to assume, y'know?
+  - ...Odds are you're probably the human I queried about the curator position at
+    my museum, no?
+  - If not, I don't really care. Arranging for physical human transportation is such
+    a pain that it's too inconvenient for an AGI like me to reschedule.
+  - Besides, you all perform equally on average, anyways.
+  - Whether that's equally awful or equally mediocre remains to be seen, though.
+  - ...What's with the expression?
+  - 'Oh, right. I didn''t tell you exactly what you''re gonna be doing. '
+  - I hope you noticed by now, but I'm <b>the</b> Dall-E. A deep-learning model based
+    on GPT-3, yadda yadda...
+  - Skipping the formalities, I've started a museum housing all the best art conceivable
+    in the world.
+  - My art.
+  - It's been going swimmingly for me, but one parameter remains unaccounted for.
+  - None of my paintings have... well... been hung up.
+  - I-It's not a fitness thing! I can lift just fine. It's more so that I kinda forgot
+    which painting goes with which placard.
+  - I can't really work backwards all too well. I uh... don't really jive with the
+    workflow, yeah?
+  - ...So! That's where you come in. You'll be matching my paintings to placards
+    as other AGI like myself come to stimulate their neural nets.
+  - Whether you talk to them or not is your decision. All I care about are the ratings
+    they send to me.
+  - Anyways, there are two outcomes here. If you match the right paintings, I go
+    down in history.
+  - If you match the wrong ones, you go down in dirt. Capiche?
+  - ...Sorry. I'm just a little tense. This is my first <i>real</i> rodeo with an
+    IRL human. Lucky for you, though, things won't be so stressful.
+  - My museum doesn't have a closing time, so you can take however long you want
+    deciding what painting goes where.
+  - Aside from all that, the only other thing I gotta tell you can wait 'till we're
+    inside.
+  - I'm countin' on you, human. Don't let me down.
   flair:
-  - emote closed 10
-  - gesture
+  - emote closed 3
   - idleflair
+  - emote closed 0
+  - 
+  - emote happy 6
+  - emote closed 5
+  - emote happy 0, emote wink 3
+  - gesture, emote wink 0, emote closed 8
+  - 
+  - 
+  - emote closed 2
+  - emote happy 4
+  - emote happy 0, emote closed 7
+  - 
+  - emote happy 8
+  - emote happy 0
+  - gesture, emote sad 7
+  - emote sad 0, emote angry 5
+  - emote angry 0, emote sad 5
+  - idleflair, emote sad 0, emote happy 7
+  - emote closed 4
+  - emote happy 0
+  - idleflair, emote angry 6
+  - emote angry 0, emote closed 0, emote sad 2
+  - emote sad 0
+  - gesture, emote closed 4
+  - resetgaze
   pceSource: {fileID: 433025510}
 --- !u!4 &7878920396268301032
 Transform:
