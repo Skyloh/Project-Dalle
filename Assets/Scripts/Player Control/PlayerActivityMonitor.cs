@@ -8,6 +8,12 @@ public class PlayerActivityMonitor : MonoBehaviour
 
     bool previous;
 
+    private void Start()
+    {
+        // bc i dont know where else to put this
+        data.ScramblePaintings();
+    }
+
     // a status-based player toggle is the neatest thing i can do here
     void Update()
     {

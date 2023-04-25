@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5482df20a3e72342ba48e449ae1608b, type: 3}
   m_Name: oldcitynightitaly
   m_EditorClassIdentifier: 
-  painting: {fileID: 0}
+  painting: {fileID: 21300000, guid: ec3e1e0dad058d846a1794438167044f, type: 3}
   high_keywords:
   - old
   - building

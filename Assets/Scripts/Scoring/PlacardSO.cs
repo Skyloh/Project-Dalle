@@ -9,9 +9,19 @@ public class PlacardSO : ScriptableObject
 
     public string[] GetWords()
     {
-        List<string> list = new List<string>(description.Split(' '));
+        List<string> list = new List<string>(description.Split(new char[2] { ' ', ',' }));
 
-        list.RemoveAll((string s) => s.Length < 2);
+        list.RemoveAll((string s) =>
+        s.Length <= 2
+        || s.Equals("and")
+        || s.Equals("with"));
+
+        string last = list[list.Count - 1];
+
+        if (last.Contains("."))
+        {
+            list[list.Count - 1] = last.Remove(last.IndexOf("."));
+        }
 
         return list.ToArray();
     }

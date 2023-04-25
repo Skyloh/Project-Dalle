@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5482df20a3e72342ba48e449ae1608b, type: 3}
   m_Name: personholdingball
   m_EditorClassIdentifier: 
-  painting: {fileID: 0}
+  painting: {fileID: 21300000, guid: 1200e9cdfbd72ef4e8f2424e8e6fa17b, type: 3}
   high_keywords:
   - person
   - light

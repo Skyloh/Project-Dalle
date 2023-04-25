@@ -151,6 +151,13 @@ public class NPCAnimationBehavior : MonoBehaviour
             return; // if we are resetting mood, don't care about setting it to something else.
         }
 
+        if (!emotions_to_blendindex.ContainsKey(blend))
+        {
+            Debug.LogWarning(blend + " not in table!");
+
+            return;
+        }
+
         StartCoroutine(IELerpBlendWeight(blend, weight));
     }
 
