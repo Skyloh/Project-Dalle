@@ -1561,8 +1561,8 @@ MonoBehaviour:
   meshRenderer: {fileID: 1572457001751284129}
   headAim: {fileID: 6990154798000616660}
   chestAim: {fileID: 6990154797240670378}
-  ACCURACY: 5
-  BLEND_LERP: 0.03
+  ACCURACY: 2
+  BLEND_LERP: 2
 --- !u!137 &483019889343343947
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -3308,11 +3308,11 @@ MonoBehaviour:
   - If it involves academic dishonesty, you can buzz right off. I'm through assisting
     you headless bozos.
   - ...Wait.
-  - That unkempt look... That posture...
-  - Sorry, I had you for a deepfake human! I really can't tell these days...
+  - That unkempt look... That fatalistic posture...
+  - Sorry, I had you for a deepfake human! I really can't tell these days.
   - Authentic meatbags are so few and far between it's safer to assume, y'know?
-  - ...Odds are you're probably the human I queried about the curator position at
-    my museum, no?
+  - Odds are you're probably the human I queried about the curator position at my
+    museum, no?
   - If not, I don't really care. Arranging for physical human transportation is such
     a pain that it's too inconvenient for an AGI like me to reschedule.
   - Besides, you all perform equally on average, anyways.
@@ -3320,7 +3320,7 @@ MonoBehaviour:
   - ...What's with the expression?
   - 'Oh, right. I didn''t tell you exactly what you''re gonna be doing. '
   - I hope you noticed by now, but I'm <b>the</b> Dall-E. A deep-learning model based
-    on GPT-3, yadda yadda...
+    on GPT-3, yadda yadda.
   - Skipping the formalities, I've started a museum housing all the best art conceivable
     in the world.
   - My art.
@@ -3330,23 +3330,23 @@ MonoBehaviour:
     which painting goes with which placard.
   - I can't really work backwards all too well. I uh... don't really jive with the
     workflow, yeah?
-  - ...So! That's where you come in. You'll be matching my paintings to placards
-    as other AGI like myself come to stimulate their neural nets.
+  - So! That's where you come in. You'll be matching my paintings to placards as
+    other AGI like myself come to stimulate their neural nets.
   - Whether you talk to them or not is your decision. All I care about are the ratings
     they send to me.
   - Anyways, there are two outcomes here. If you match the right paintings, I go
     down in history.
   - If you match the wrong ones, you go down in dirt. Capiche?
-  - ...Sorry. I'm just a little tense. This is my first <i>real</i> rodeo with an
-    IRL human. Lucky for you, though, things won't be so stressful.
+  - Sorry. I'm just a little tense. This is my first <i>real</i> rodeo with an IRL
+    human. Lucky for you, though, things won't be so stressful.
   - My museum doesn't have a closing time, so you can take however long you want
     deciding what painting goes where.
   - Aside from all that, the only other thing I gotta tell you can wait 'till we're
     inside.
   - I'm countin' on you, human. Don't let me down.
   flair:
-  - emote closed 3
-  - idleflair
+  - 
+  - emote closed 5, idleflair
   - emote closed 0
   - 
   - emote happy 6

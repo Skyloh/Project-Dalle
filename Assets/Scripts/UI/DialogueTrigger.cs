@@ -6,6 +6,7 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] [TextArea] string[] text;
     [SerializeField] string[] flair;
     [SerializeField] GameObject pceSource;
+    [SerializeField] GameObject alert;
 
     List<IConvoEvent> events;
 
@@ -23,6 +24,8 @@ public class DialogueTrigger : MonoBehaviour
 
     public bool TriggerDialogue(Transform obj)
     {
+        alert.SetActive(false);
+
         string[] ntext = text;
         string[] nflair = flair;
 
@@ -30,9 +33,10 @@ public class DialogueTrigger : MonoBehaviour
 
         if (events.Count != 0)
         {
+            alert.SetActive(true);
             pce = events[0];
 
-            // if the event doesn't a pre-effect, remove it when used.
+            // if the event doesn't use pre-effect, remove it when used.
             if (!pce.Preactivate(ref ntext, ref nflair))
             {
                 events.RemoveAt(0);

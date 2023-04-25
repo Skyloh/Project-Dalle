@@ -214,7 +214,7 @@ public class NPCAnimationBehavior : MonoBehaviour
 
         while (Mathf.Abs(current_weight - destination) > ACCURACY)
         {
-            current_weight = Mathf.Lerp(current_weight, destination, BLEND_LERP);
+            current_weight = Mathf.Lerp(current_weight, destination, BLEND_LERP * Time.deltaTime);
 
             meshRenderer.SetBlendShapeWeight(index, current_weight);
 
@@ -242,12 +242,13 @@ public class NPCAnimationBehavior : MonoBehaviour
             {
                 float current_weight = meshRenderer.GetBlendShapeWeight(i);
 
-                current_weight = Mathf.Lerp(current_weight, 0f, BLEND_LERP);
+                current_weight = Mathf.Lerp(current_weight, 0f, BLEND_LERP * Time.deltaTime * 1.5f);
 
                 meshRenderer.SetBlendShapeWeight(i, current_weight);
 
                 avg_weight += current_weight;
             }
+
 
             avg_weight /= skinnedMesh.blendShapeCount;
 

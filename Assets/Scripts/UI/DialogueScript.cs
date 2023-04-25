@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -16,6 +17,9 @@ public class DialogueScript : MonoBehaviour
     [SerializeField] AudioClip crawl_audio, progress_audio;
 
     [SerializeField] float LOCKOUT_TIMER = 1f;
+
+    [SerializeField] char[] DELAY_CHARS = new char[] { '.', '!', '?'};
+    List<char> delay_chars;
 
     string[] all_text;
     string[] flair;
@@ -34,6 +38,7 @@ public class DialogueScript : MonoBehaviour
     private void Awake()
     {
         this.enabled = false;
+        delay_chars = new List<char>(DELAY_CHARS);
     }
 
     public void Init(string[] text, string[] flair, int ID, NPCAnimationBehavior npc, string npc_name, IConvoEvent pce)
@@ -137,7 +142,7 @@ public class DialogueScript : MonoBehaviour
 
             char character = ui.textInfo.characterInfo[crawl].character;
 
-            if (character.Equals('.'))
+            if (delay_chars.Contains(character))
             {
                 yield return new WaitForSeconds(0.25f + data.TEXT_CRAWL_SPEED);
             }

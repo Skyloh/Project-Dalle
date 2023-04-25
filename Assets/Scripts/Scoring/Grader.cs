@@ -16,8 +16,6 @@ public class Grader
             max += ps.GetMaxScorePossible();
         }
 
-        Debug.Log(sum + " " + max);
-
         return sum / max;
     }
 }

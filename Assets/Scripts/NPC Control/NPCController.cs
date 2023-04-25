@@ -54,7 +54,7 @@ public class NPCController : MonoBehaviour
             Destroy(GetComponent<NPCMoveBehavior>());
         }
 
-        BlendShapeMood = (BlendEmotions)(int)Random.Range(0f, 5.95f);
+        BlendShapeMood = (BlendEmotions)Random.Range(0, 5);
 
         animBehavior.SetRuntimeAnimator(rac);
 

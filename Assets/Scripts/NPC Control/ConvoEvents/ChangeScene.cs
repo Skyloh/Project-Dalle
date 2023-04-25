@@ -4,8 +4,17 @@ public class ChangeScene : MonoBehaviour, IConvoEvent
 {
     [SerializeField] string sceneName;
 
-    public bool Preactivate(ref string[] _none, ref string[] __none)
+    [SerializeField, TextArea] string[] mutate_text;
+    [SerializeField] string[] mutate_flair;
+
+    public virtual bool Preactivate(ref string[] t, ref string[] f)
     {
+        if (mutate_text != null)
+        {
+            t = mutate_text;
+            f = mutate_flair;
+        }
+
         return false;
     }
 

@@ -122,6 +122,100 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: ea7c36481b14a2b41b9ebe2466ace93c, type: 2}
+--- !u!1 &132027103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 132027104}
+  - component: {fileID: 132027107}
+  - component: {fileID: 132027106}
+  - component: {fileID: 132027105}
+  m_Layer: 2
+  m_Name: Alert
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &132027104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132027103}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 2.5, z: 0}
+  m_LocalScale: {x: 0.125, y: 0.5, z: 0.125}
+  m_Children:
+  - {fileID: 1272907705}
+  m_Father: {fileID: 3029797650259123867}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &132027105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132027103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe6d0e8bf3509c4787261071d362cdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim_speed: 50
+--- !u!23 &132027106
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132027103}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &132027107
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132027103}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!64 &239990223
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -497,17 +591,17 @@ PrefabInstance:
     - target: {fileID: 9157503201044669981, guid: 6df6ad670210ce348a7a37fd54df1a42,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.75
       objectReference: {fileID: 0}
     - target: {fileID: 9157503201044669981, guid: 6df6ad670210ce348a7a37fd54df1a42,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.789
+      value: 3.25
       objectReference: {fileID: 0}
     - target: {fileID: 9157503201044669981, guid: 6df6ad670210ce348a7a37fd54df1a42,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.967
+      value: 17.319
       objectReference: {fileID: 0}
     - target: {fileID: 9157503201044669981, guid: 6df6ad670210ce348a7a37fd54df1a42,
         type: 3}
@@ -547,7 +641,7 @@ PrefabInstance:
     - target: {fileID: 9157503201044669982, guid: 6df6ad670210ce348a7a37fd54df1a42,
         type: 3}
       propertyPath: m_Name
-      value: TutorialBoard
+      value: PauseTutorial
       objectReference: {fileID: 0}
     - target: {fileID: 9157503201044669983, guid: 6df6ad670210ce348a7a37fd54df1a42,
         type: 3}
@@ -1851,7 +1945,7 @@ PrefabInstance:
     - target: {fileID: 4402901802265070329, guid: 8ae99731fb9ba844faf7428c0a2501c0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4402901802265070329, guid: 8ae99731fb9ba844faf7428c0a2501c0,
         type: 3}
@@ -2025,7 +2119,7 @@ PrefabInstance:
     - target: {fileID: 996834067793601522, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 996834067793601522, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
         type: 3}
@@ -2081,6 +2175,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPC Conductor
+      objectReference: {fileID: 0}
+    - target: {fileID: 996834067793601524, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
         type: 3}
@@ -3055,6 +3154,93 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.010000013, y: 0.39999998, z: 0.024000013}
   m_Center: {x: -0.000000004768372, y: 0.15, z: 0.010000004}
+--- !u!1001 &981950485
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 9157503201044669981, guid: 6df6ad670210ce348a7a37fd54df1a42,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157503201044669981, guid: 6df6ad670210ce348a7a37fd54df1a42,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157503201044669981, guid: 6df6ad670210ce348a7a37fd54df1a42,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157503201044669981, guid: 6df6ad670210ce348a7a37fd54df1a42,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.319
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157503201044669981, guid: 6df6ad670210ce348a7a37fd54df1a42,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157503201044669981, guid: 6df6ad670210ce348a7a37fd54df1a42,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157503201044669981, guid: 6df6ad670210ce348a7a37fd54df1a42,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157503201044669981, guid: 6df6ad670210ce348a7a37fd54df1a42,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157503201044669981, guid: 6df6ad670210ce348a7a37fd54df1a42,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157503201044669981, guid: 6df6ad670210ce348a7a37fd54df1a42,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157503201044669981, guid: 6df6ad670210ce348a7a37fd54df1a42,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157503201044669982, guid: 6df6ad670210ce348a7a37fd54df1a42,
+        type: 3}
+      propertyPath: m_Name
+      value: ScoringTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157503201044669983, guid: 6df6ad670210ce348a7a37fd54df1a42,
+        type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5452326394343d14f83c2f77ad45b374,
+        type: 3}
+    - target: {fileID: 9157503201044669983, guid: 6df6ad670210ce348a7a37fd54df1a42,
+        type: 3}
+      propertyPath: sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1aed19d4ec628e44c8efb2c4f5817a0d,
+        type: 3}
+    - target: {fileID: 9157503201044669983, guid: 6df6ad670210ce348a7a37fd54df1a42,
+        type: 3}
+      propertyPath: sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: a479d1064f675744d8590ca15a3824a2,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6df6ad670210ce348a7a37fd54df1a42, type: 3}
 --- !u!1 &1007826543 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1094559010302358929, guid: bb294c8753fc233419062c192ca93538,
@@ -3119,7 +3305,7 @@ Transform:
   - {fileID: 331940072}
   - {fileID: 903558584}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1129981794
 GameObject:
@@ -3246,7 +3432,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1183090314
 PrefabInstance:
@@ -3364,6 +3550,99 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1183090314}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1272907704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1272907705}
+  - component: {fileID: 1272907708}
+  - component: {fileID: 1272907707}
+  - component: {fileID: 1272907706}
+  m_Layer: 2
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1272907705
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272907704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.85, z: 0}
+  m_LocalScale: {x: 1, y: 0.25, z: 1}
+  m_Children: []
+  m_Father: {fileID: 132027104}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1272907706
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272907704}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000005, y: 1, z: 1.0000005}
+  m_Center: {x: 0.0000009536748, y: 0, z: -0.0000019073495}
+--- !u!23 &1272907707
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272907704}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1272907708
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272907704}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1274366211 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8343248219658952724, guid: bb294c8753fc233419062c192ca93538,
@@ -3509,7 +3788,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1341571540}
+  - component: {fileID: 1341571543}
+  - component: {fileID: 1341571542}
   - component: {fileID: 1341571541}
+  - component: {fileID: 1341571544}
   m_Layer: 2
   m_Name: Event Source
   m_TagString: Untagged
@@ -3543,10 +3825,135 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb677fec8e4048498001569bed30a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  high_text:
+  - ...Woah. 000%!
+  - H-Human! I'm impressed! You're really good at recognizing these prompts! I really
+    did make the right choice.
+  - I knew you had the potential all along.
+  - ...What? No, I never said you would perform poorly. Stop gaslighting me.
+  - Anyways, your job is pretty much done for today. How's about I see you out, hm?
+  - Chat me up again once you're ready to leave.
+  high_flair:
+  - gesture
+  - emote happy 10
+  - idleflair, emote closed 5
+  - emote happy 0, emote closed 9
+  - emote closed 2, emote happy 8
+  - gesture, emote happy 0, emote closed 0
+  mid_text:
+  - Huh. 000.
+  - I'm not sure how to feel about that. I think you can do better, right?
+  - Why don't you go back and shuffle the paintings around? Y'know, do your job.
+  - ...But, like, better this time.
+  mid_flair:
+  - gesture
+  - emote wink 3
+  - emote wink 0, emote happy 7
+  - emote closed 8
+  low_text:
+  - ...The reviews were about a 000.
+  - Well. It's safe to say that I learned something today.
+  - It's possible for a human to be alive without a functioning brain.
+  - Look, just go back and fix your mistakes. We'll try again.
+  low_flair:
+  - 
+  - emote angry 10
+  - emote closed 6, gesture
+  - emote angry 2, emote closed 8
+  score_index: 0
+--- !u!114 &1341571542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341571539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6303963d93cb5b4b923e7e7748ba518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guard_text:
+  - Oh, you're done? That was impressively fast. Good job...
+  - ...Hold up. You missed some paintings.
+  - You blockhead. I can't collect reviews if you didn't finish the job in the first
+    place!
+  - ...Get back to work.
+  guard_flair:
+  - 
+  - emote angry 3
+  - gesture, emote angry 5, emote closed 5
+  - idleflair, emote angry 10, emote closed 0
+--- !u!114 &1341571543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341571539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffcad93fa0e71e844aaff52cbbdc75f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   text:
-  - Took you long enough. You scored around 0.
+  - Well, here we are. The best art museum you'll ever set your eyes on.
+  - Don't worry about the fare. I'll take it out of your paycheck.
+  - Tch, I'm only kidding. You humans are too sensitive.
+  - In fact, please don't start crying when you're putting up my paintings. I understand
+    their perfection is a bit much for the mortal coil, but really.
+  - To actually put up a painting, you gotta interact with the empty picture frames.
+    From there, you can select something you feel matches the placard from my catalog.
+  - ...Look more happy, human. You get early access! Everyone says my exhibitions
+    are the frontier of art!
+  - ...At least, I hope they do. Their ratings will decide.
+  - You gotta do a good job here, got it?
+  - When you're done, zip on back to me ASAP. That'll let me know I can start compiling
+    reviews.
+  - Get going, curator! If killing time was a felony, you'd already be on death row.
   flair:
-  - emote angry 8
+  - gesture
+  - emote happy 7, emote closed 6
+  - emote happy 0, emote closed 3
+  - emote closed 10
+  - emote closed 0, gesture
+  - idleflair, emote angry 5
+  - emote angry 0, emote sad 4
+  - gesture, emote sad 0, emote wink 3
+  - emote wink 0
+  - idleflair, emote happy 10
+--- !u!114 &1341571544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341571539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c11287f761ceb654698dfef08fd50443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: MainMenu
+  mutate_text:
+  - Alright, ready to go?
+  - Swell. Follow me, curator.
+  - Oh, and before I forget, here's your paycheck. Y'see, us AGIs pay when the job
+    is done. Not on some arbitrary timescale.
+  - ...Notice how I axed the ticket price. You can thank me tomorrow.
+  - Although, there won't be a tomorrow just yet. It's still in development.
+  - ...Don't give me that look. My artistic perfection takes time.
+  - Well, I say <i>mine</i>, but I couldn't have done it without you, probably.
+  - Please working with you, chum.
+  mutate_flair:
+  - 
+  - gesture, emote happy 5
+  - emote happy 0
+  - emote wink 10
+  - emote wink 0
+  - idleflair, emote angry 8
+  - emote angry 0, emote sad 3
+  - emote sad 0, idleflair, emote happy 10
 --- !u!1001 &1384095901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4817,8 +5224,9 @@ Transform:
   - {fileID: 3280513425119537218}
   - {fileID: 3029797650963610026}
   - {fileID: 1341571540}
+  - {fileID: 132027104}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &3029797650259123936
 MonoBehaviour:
@@ -4837,7 +5245,7 @@ MonoBehaviour:
   headAim: {fileID: 3029797650614942413}
   chestAim: {fileID: 3029797650293451993}
   ACCURACY: 5
-  BLEND_LERP: 0.03
+  BLEND_LERP: 2
 --- !u!114 &3029797650259123937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4881,10 +5289,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text:
-  - Hey, talk to me again for your score.
+  - You finished everything? Good work, human. Let's accumulate those reviews, huh?
+  - It won't take me long. Query me in like, a second or so.
   flair:
   - gesture
+  - emote wink 5
   pceSource: {fileID: 1341571539}
+  alert: {fileID: 132027103}
 --- !u!135 &3029797650259123940
 SphereCollider:
   m_ObjectHideFlags: 0
