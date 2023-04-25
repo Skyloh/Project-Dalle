@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Text.RegularExpressions;
 
-public class EvaluateRestock : MonoBehaviour, IPostConvoEvent
+public class EvaluateRestock : MonoBehaviour, IConvoEvent
 {
     [SerializeField, TextArea] string[] text;
     [SerializeField] string[] flair;
@@ -14,7 +14,12 @@ public class EvaluateRestock : MonoBehaviour, IPostConvoEvent
     void Awake()
     {
         paintings = GameObject.FindGameObjectsWithTag("Painting");
-        regex = new Regex("[0-9]+");
+        regex = new Regex("[-0-9]+");
+    }
+
+    public bool Preactivate(ref string[] _none, ref string[] __none)
+    {
+        return false;
     }
 
     public void Activate(DialogueTrigger npcdt)
@@ -23,7 +28,7 @@ public class EvaluateRestock : MonoBehaviour, IPostConvoEvent
 
         text[0] = regex.Replace(text[0], score.ToString());
 
-        npcdt.SetText(text, flair, new IPostConvoEvent[1] { this });
+        npcdt.SetText(text, flair, new IConvoEvent[1] { this });
     }
 
 }

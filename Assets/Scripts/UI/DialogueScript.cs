@@ -19,7 +19,7 @@ public class DialogueScript : MonoBehaviour
 
     string[] all_text;
     string[] flair;
-    IPostConvoEvent postConvoEvent;
+    IConvoEvent postConvoEvent;
     NPCAnimationBehavior speakingNPCAnimationBehavior;
 
     int rend_index; // what index are we at in the set of texts
@@ -36,7 +36,7 @@ public class DialogueScript : MonoBehaviour
         this.enabled = false;
     }
 
-    public void Init(string[] text, string[] flair, int ID, NPCAnimationBehavior npc, string npc_name, IPostConvoEvent pce)
+    public void Init(string[] text, string[] flair, int ID, NPCAnimationBehavior npc, string npc_name, IConvoEvent pce)
     {
         if (ID == current)
         {

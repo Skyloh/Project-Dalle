@@ -7,54 +7,62 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] string[] flair;
     [SerializeField] GameObject pceSource;
 
-    List<IPostConvoEvent> events;
+    List<IConvoEvent> events;
 
     private void Start()
     {
-        IPostConvoEvent[] temp = new IPostConvoEvent[0];
+        IConvoEvent[] temp = new IConvoEvent[0];
 
         if (pceSource)
         {
-            temp = pceSource.GetComponents<IPostConvoEvent>();
+            temp = pceSource.GetComponents<IConvoEvent>();
         }
 
-        events = new List<IPostConvoEvent>(temp);
+        events = new List<IConvoEvent>(temp);
     }
 
     public bool TriggerDialogue(Transform obj)
     {
-        if (text.Length != flair.Length)
+        string[] ntext = text;
+        string[] nflair = flair;
+
+        IConvoEvent pce = null;
+
+        if (events.Count != 0)
+        {
+            pce = events[0];
+
+            // if the event doesn't a pre-effect, remove it when used.
+            if (!pce.Preactivate(ref ntext, ref nflair))
+            {
+                events.RemoveAt(0);
+            }
+        }
+
+        if (ntext.Length != nflair.Length)
         {
             Debug.LogError("Text-Flair length mismatch! Aborting dialogue trigger.");
 
             return true;
         }
 
-        IPostConvoEvent pce = null;
-
-        if (events.Count != 0)
-        {
-            pce = events[0];
-            events.RemoveAt(0);
-        }
-
         DialogueScript d = obj.GetComponent<DialogueScript>();
 
         d.enabled = true;
 
-        d.Init(text, flair, GetInstanceID(), GetComponent<NPCAnimationBehavior>(), name, pce);
+        d.Init(ntext, nflair, GetInstanceID(), GetComponent<NPCAnimationBehavior>(), name, pce);
 
         return false; // stop camera from raycasting
     }
 
-    public void SetText(string[] text, string[] flair, IPostConvoEvent[] events = null)
+    public void SetText(string[] text, string[] flair, IConvoEvent[] events = null)
     {
         this.text = text;
         this.flair = flair;
 
         if (events != null)
         {
-            this.events = new List<IPostConvoEvent>(events);
+            this.events = new List<IConvoEvent>(events);
         }
     }
 }

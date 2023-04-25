@@ -61,7 +61,7 @@ public class NPCController : MonoBehaviour
         positions_of_interest = ots;
 
         npcDialogueTrigger.SetText(pack.dialogue, pack.flair, 
-            pack.source != null ? pack.source.GetComponents<IPostConvoEvent>() : null);
+            pack.source != null ? pack.source.GetComponents<IConvoEvent>() : null);
 
         if (!LOCKED_TO_IDLE)
         {
