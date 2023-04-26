@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ab5977eaef86a4385ce99fef4b1b7a, type: 3}
   m_Name: shapedballoon
   m_EditorClassIdentifier: 
-  description: red, holding, black, white, clear, ball, apple, image, standing, solemn,
-    simple, crude, weird, person, child.
+  description: red, holding, black, white, clear, ball, apple, child, image, standing,
+    solemn, simple, crude, weird, person.

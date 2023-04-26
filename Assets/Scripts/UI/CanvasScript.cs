@@ -11,7 +11,7 @@ public class CanvasScript : MonoBehaviour
 
     public void UpdateTextCrawl(float value)
     {
-        data.TEXT_CRAWL_SPEED = value;
+        data.TEXT_CRAWL_SPEED = 0.105f - value;
     }
 
     public void UpdateVolume(float value)

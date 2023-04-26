@@ -3793,10 +3793,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1341571540}
+  - component: {fileID: 1341571544}
   - component: {fileID: 1341571543}
   - component: {fileID: 1341571542}
   - component: {fileID: 1341571541}
-  - component: {fileID: 1341571544}
   m_Layer: 2
   m_Name: Event Source
   m_TagString: Untagged
@@ -3905,16 +3905,17 @@ MonoBehaviour:
   - Well, here we are. The best art museum you'll ever set your eyes on.
   - Don't worry about the fare. I'll take it out of your paycheck.
   - Tch, I'm only kidding. You humans are too sensitive.
-  - In fact, please don't start crying when you're putting up my paintings. I understand
-    their perfection is a bit much for the mortal coil, but really.
-  - To actually put up a painting, you gotta interact with the empty picture frames.
-    From there, you can select something you feel matches the placard from my catalog.
+  - On the topic of being sensitive, be sure to handle my legendary works with care
+    when you're hanging them up.
+  - To actually put up a painting, you gotta interact with the empty picture frames,
+    not the placards. From there, you can select something you feel matches the placard
+    from my catalog.
+  - When you're done, zip on back to me ASAP. That'll let me know I can start compiling
+    reviews.
   - ...Look more happy, human. You get early access! Everyone says my exhibitions
     are the frontier of art!
   - ...At least, I hope they do. Their ratings will decide.
   - You gotta do a good job here, got it?
-  - When you're done, zip on back to me ASAP. That'll let me know I can start compiling
-    reviews.
   - Get going, curator! If killing time was a felony, you'd already be on death row.
   flair:
   - gesture
@@ -3922,11 +3923,11 @@ MonoBehaviour:
   - emote happy 0, emote closed 3
   - emote closed 10
   - emote closed 0, gesture
+  - emote wink 0
   - idleflair, emote angry 5
   - emote angry 0, emote sad 4
   - gesture, emote sad 0, emote wink 3
-  - emote wink 0
-  - idleflair, emote happy 10
+  - emote wink 0, idleflair, emote happy 10
 --- !u!114 &1341571544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5369,20 +5370,6 @@ MonoBehaviour:
   LOCKED_TO_IDLE: 1
   observation_period: 5
   positions_of_interest: []
---- !u!114 &3029797650259123948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3029797650259123949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7067b0875d8feb64c9e6a288f723fdd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bodyMesh: {fileID: 5600802479987175133}
-  eyeMesh: {fileID: 6835471813619157559}
 --- !u!1 &3029797650259123949
 GameObject:
   m_ObjectHideFlags: 0
@@ -5400,7 +5387,6 @@ GameObject:
   - component: {fileID: 3029797650259123937}
   - component: {fileID: 3029797650259123938}
   - component: {fileID: 3029797650259123939}
-  - component: {fileID: 3029797650259123948}
   m_Layer: 2
   m_Name: Dall-E
   m_TagString: Untagged

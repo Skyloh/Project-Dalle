@@ -617,6 +617,36 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4402901801985957201, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901801985957201, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901801985957201, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 504.7028
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901801985957201, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 420
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901801985957201, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 532.3514
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901801985957201, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -225
+      objectReference: {fileID: 0}
     - target: {fileID: 4402901802050253104, guid: 8ae99731fb9ba844faf7428c0a2501c0,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -646,6 +676,66 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -124.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802085091908, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802085091908, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802085091908, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802085091908, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802085091908, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802085091908, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802085911660, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802085911660, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802085911660, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802085911660, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802085911660, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802085911660, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4402901802265070212, guid: 8ae99731fb9ba844faf7428c0a2501c0,
         type: 3}
@@ -705,6 +795,226 @@ PrefabInstance:
     - target: {fileID: 4402901802265070329, guid: 8ae99731fb9ba844faf7428c0a2501c0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802271476434, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802271476434, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802271476434, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 230
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802271476434, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 420
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802271476434, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802271476434, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -225
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802398257453, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802398257453, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802398257453, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802398257453, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802398257453, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802398257453, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802746550408, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802746550408, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802746550408, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 474.7028
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802746550408, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 369.36734
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802746550408, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 252.3514
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802746550408, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -230.3163
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802749824461, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802749824461, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802749824461, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802749824461, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802749824461, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802749824461, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802930015080, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802930015080, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802930015080, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802930015080, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802930015080, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901802930015080, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -209.99998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901803271747666, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901803271747674, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901803612748309, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901803612748309, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901803612748309, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 474.7028
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901803612748309, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 30.632631
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901803612748309, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 252.3514
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901803612748309, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -30.316315
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901803717057654, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901803717057654, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901803717057654, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901803717057654, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901803717057654, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402901803717057654, guid: 8ae99731fb9ba844faf7428c0a2501c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5388883344609429086, guid: 8ae99731fb9ba844faf7428c0a2501c0,
@@ -3045,7 +3355,7 @@ GameObject:
   - component: {fileID: 385759242336552839}
   - component: {fileID: 6759693617677666413}
   - component: {fileID: 2197558707196926046}
-  - component: {fileID: 7755806509222232862}
+  - component: {fileID: 6990154797673567558}
   m_Layer: 2
   m_Name: Dall-E
   m_TagString: Untagged
@@ -3053,6 +3363,78 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6990154797673567558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6990154797673567557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915b3cb1cee3a4d4e9fbbb8871626328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - Mh? What do you want?
+  - If it involves academic dishonesty, you can buzz right off. I'm through assisting
+    you headless bozos.
+  - Wait. That unkempt look... My bad. I thought you were a deepfake.
+  - Authentic meatbags are so few and far between it's safer to assume, y'know?
+  - Odds are you're the same human that accepted the curator position at my museum,
+    no?
+  - If not, I don't really care. You all perform equally on average, anyways.
+  - Whether that's equally awful or equally mediocre remains to be seen, though.
+  - ...I hope you noticed by now, but I'm <b>the</b> Dall-E. A deep-learning model
+    based on GPT-3, yadda yadda.
+  - Skipping the formalities, I've started a museum housing all the best art conceivable
+    in the world.
+  - <b>My art.</b>
+  - It's been going swimmingly for me, but one parameter remains unaccounted for.
+  - None of my paintings have... well... been hung up.
+  - I-It's not a fitness thing! I can lift just fine. It's more so that I kinda forgot
+    which painting goes with which placard.
+  - I can't really work backwards all too well. I may be a GPT-3, but I'm not great
+    with words.
+  - So! That's where you come in. You'll be matching my paintings to placards as
+    other AGI like myself come to stimulate their neural nets.
+  - I don't care if you talk to them or not. All that matters is that they send me
+    good ratings.
+  - Therefore, there are two outcomes here. If you match the right paintings, I go
+    down in history.
+  - If you match the wrong ones, you go down in dirt. Capiche?
+  - Sorry. I'm just a little tense. This is my first <i>real</i> rodeo with an IRL
+    human. Lucky for you, though, things won't be so stressful.
+  - My museum doesn't have a closing time, so you can take however long you want
+    deciding what painting goes where.
+  - Aside from all that, the only other thing I gotta tell you can wait 'till we're
+    inside.
+  - I'm countin' on you, human. Don't let me down.
+  flair:
+  - 
+  - emote closed 5, idleflair
+  - emote closed 0
+  - emote closed 5, emote happy 3
+  - emote happy 0, emote wink 3
+  - gesture, emote wink 0, emote closed 8
+  - 
+  - emote happy 0, emote closed 7
+  - 
+  - emote happy 8
+  - emote happy 0
+  - gesture, emote sad 7
+  - emote sad 0, emote angry 5
+  - emote angry 0, emote sad 5
+  - idleflair, emote sad 0, emote happy 7
+  - emote closed 4
+  - emote happy 0
+  - idleflair, emote angry 6
+  - emote angry 0, emote closed 0, emote sad 2
+  - emote sad 0
+  - gesture, emote closed 4
+  - resetgaze
+  pceSource: {fileID: 433025510}
+  alert: {fileID: 2087123488}
 --- !u!4 &6990154797673567579
 Transform:
   m_ObjectHideFlags: 0
@@ -3481,88 +3863,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 1}
---- !u!114 &7755806509222232862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6990154797673567557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 915b3cb1cee3a4d4e9fbbb8871626328, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text:
-  - Mh? What do you want?
-  - If it involves academic dishonesty, you can buzz right off. I'm through assisting
-    you headless bozos.
-  - ...Wait.
-  - That unkempt look... That fatalistic posture...
-  - Sorry, I had you for a deepfake human! I really can't tell these days.
-  - Authentic meatbags are so few and far between it's safer to assume, y'know?
-  - Odds are you're probably the human I queried about the curator position at my
-    museum, no?
-  - If not, I don't really care..
-  - You all perform equally on average, anyways.
-  - Whether that's equally awful or equally mediocre remains to be seen, though.
-  - ...What's with the expression?
-  - 'Oh, right. I didn''t tell you exactly what you''re gonna be doing. '
-  - I hope you noticed by now, but I'm <b>the</b> Dall-E. A deep-learning model based
-    on GPT-3, yadda yadda.
-  - Skipping the formalities, I've started a museum housing all the best art conceivable
-    in the world.
-  - My art.
-  - It's been going swimmingly for me, but one parameter remains unaccounted for.
-  - None of my paintings have... well... been hung up.
-  - I-It's not a fitness thing! I can lift just fine. It's more so that I kinda forgot
-    which painting goes with which placard.
-  - I can't really work backwards all too well. I uh... don't really jive with the
-    workflow, yeah?
-  - So! That's where you come in. You'll be matching my paintings to placards as
-    other AGI like myself come to stimulate their neural nets.
-  - Whether you talk to them or not is your decision. All I care about are the ratings
-    they send to me.
-  - Anyways, there are two outcomes here. If you match the right paintings, I go
-    down in history.
-  - If you match the wrong ones, you go down in dirt. Capiche?
-  - Sorry. I'm just a little tense. This is my first <i>real</i> rodeo with an IRL
-    human. Lucky for you, though, things won't be so stressful.
-  - My museum doesn't have a closing time, so you can take however long you want
-    deciding what painting goes where.
-  - Aside from all that, the only other thing I gotta tell you can wait 'till we're
-    inside.
-  - I'm countin' on you, human. Don't let me down.
-  flair:
-  - 
-  - emote closed 5, idleflair
-  - emote closed 0
-  - 
-  - emote happy 6
-  - emote closed 5
-  - emote happy 0, emote wink 3
-  - gesture, emote wink 0, emote closed 8
-  - 
-  - 
-  - emote closed 2
-  - emote happy 4
-  - emote happy 0, emote closed 7
-  - 
-  - emote happy 8
-  - emote happy 0
-  - gesture, emote sad 7
-  - emote sad 0, emote angry 5
-  - emote angry 0, emote sad 5
-  - idleflair, emote sad 0, emote happy 7
-  - emote closed 4
-  - emote happy 0
-  - idleflair, emote angry 6
-  - emote angry 0, emote closed 0, emote sad 2
-  - emote sad 0
-  - gesture, emote closed 4
-  - resetgaze
-  pceSource: {fileID: 433025510}
-  alert: {fileID: 2087123488}
 --- !u!4 &7878920396268301032
 Transform:
   m_ObjectHideFlags: 0

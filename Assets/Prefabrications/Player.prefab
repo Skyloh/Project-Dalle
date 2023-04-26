@@ -1678,6 +1678,7 @@ MonoBehaviour:
   canvas: {fileID: 4402901803271747674}
   placard_text: {fileID: 4402901802746550409}
   displayed: {fileID: 4402901802398257442}
+  set_button: {fileID: 4402901803717057653}
   data: {fileID: 11400000, guid: 5a132e262ebcff746af7514c2fb1442d, type: 2}
 --- !u!1 &4402901802746550411
 GameObject:

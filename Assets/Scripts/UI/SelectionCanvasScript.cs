@@ -7,6 +7,7 @@ public class SelectionCanvasScript : MonoBehaviour
     [SerializeField] Text placard_text; // the text that the placard UI displays
     PaintingSO painting;
     [SerializeField] Image displayed; // the reference to the UI Image displaying the painting
+    [SerializeField] Image set_button;
     [SerializeField] PlayerDataSO data; // the player's data we store so we can access their list of paintings
     int currently_displaying_index; // the index of the currently displayed painting
 
@@ -104,13 +105,14 @@ public class SelectionCanvasScript : MonoBehaviour
     {
         PaintingSO p = data.GetPainting(currently_displaying_index);
 
-        // invariant
-        // there are more paintings than painting slots
-        while (p.used)
+        if (!p.CheckIfEmpty())
         {
-            IncrementIndex(dir);
+            set_button.color = Color.red;
+        } 
 
-            p = data.GetPainting(currently_displaying_index);
+        else
+        {
+            set_button.color = Color.white;
         }
 
         painting = p;

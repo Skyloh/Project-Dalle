@@ -21,7 +21,8 @@ public class PlayerDataSO : ScriptableObject
 
             var cache = PAINTINGS[index];
 
-            PAINTINGS[i].used = PAINTINGS[index].used = false;
+            PAINTINGS[i].InitIDs();
+            PAINTINGS[index].InitIDs();
 
             PAINTINGS[index] = PAINTINGS[i];
             PAINTINGS[i] = cache;

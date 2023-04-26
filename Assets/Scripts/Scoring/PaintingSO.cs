@@ -6,9 +6,32 @@ public class PaintingSO : ScriptableObject
 {
     public Sprite painting;
 
-    public bool used;
-
     public string[] high_keywords, middle_keywords, low_keywords;
+
+    [SerializeField] List<int> IDs;
+
+    public void InitIDs()
+    {
+        IDs = new List<int>();
+    }
+
+    public void AddIDToList(int id)
+    {
+        IDs.Add(id);
+    }
+
+    public void RemoveIDFromList(int id)
+    {
+        if (IDs.Contains(id))
+        {
+            IDs.Remove(id);
+        }
+    }
+
+    public bool CheckIfEmpty()
+    {
+        return IDs.Count == 0;
+    }
 
     public int MaxScore()
     {

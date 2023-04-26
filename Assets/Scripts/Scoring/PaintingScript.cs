@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class PaintingScript : MonoBehaviour, IRaycastable
@@ -10,10 +8,18 @@ public class PaintingScript : MonoBehaviour, IRaycastable
     [SerializeField] SpriteRenderer painting;
     [SerializeField] TextMeshPro placardText;
 
+    int hashCode;
+
     void Start()
     {
         placardText.text = placardSO.description;
-        painting.sprite = paintingSO.painting;
+
+        if (paintingSO)
+        {
+            painting.sprite = paintingSO.painting;
+        }
+
+        hashCode = GetHashCode();
     }
 
     public bool OnHit(Transform source)
@@ -31,12 +37,12 @@ public class PaintingScript : MonoBehaviour, IRaycastable
     {
         if (paintingSO)
         {
-            paintingSO.used = false;
+            paintingSO.RemoveIDFromList(hashCode);
         }
 
-        paintingSO = p;
+        p.AddIDToList(hashCode);
 
-        p.used = true;
+        paintingSO = p;
 
         painting.sprite = p.painting;
     }
