@@ -6,6 +6,8 @@ public class PaintingSO : ScriptableObject
 {
     public Sprite painting;
 
+    public bool used;
+
     public string[] high_keywords, middle_keywords, low_keywords;
 
     public int MaxScore()

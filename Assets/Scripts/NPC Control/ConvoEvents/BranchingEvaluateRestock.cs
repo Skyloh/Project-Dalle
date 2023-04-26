@@ -29,7 +29,7 @@ public class BranchingEvaluateRestock : MonoBehaviour, IConvoEvent
         string[] text;
         string[] flair;
 
-        if (score > 80)
+        if (score > 95)
         {
             text = high_text;
             flair = high_flair;
@@ -37,7 +37,7 @@ public class BranchingEvaluateRestock : MonoBehaviour, IConvoEvent
             finished = true;
         }
 
-        else if (score > 50)
+        else if (score > 80)
         {
             text = mid_text;
             flair = mid_flair;

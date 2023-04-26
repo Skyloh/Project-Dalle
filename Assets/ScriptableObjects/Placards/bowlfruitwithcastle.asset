@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ab5977eaef86a4385ce99fef4b1b7a, type: 3}
   m_Name: bowlfruitwithcastle
   m_EditorClassIdentifier: 
-  description: apple, wooden, sketch, red, table, castle, mountain, drawing, vibrant,
-    simple, holding, weird.
+  description: apple, wooden, sketch, red, table, mountain, drawing, vibrant, simple,
+    holding, weird.

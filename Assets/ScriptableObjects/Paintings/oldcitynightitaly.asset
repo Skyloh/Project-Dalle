@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: oldcitynightitaly
   m_EditorClassIdentifier: 
   painting: {fileID: 21300000, guid: ec3e1e0dad058d846a1794438167044f, type: 3}
+  used: 0
   high_keywords:
   - old
-  - building
-  - night
   - ruins
+  - night
   middle_keywords:
   - mountains
   - light

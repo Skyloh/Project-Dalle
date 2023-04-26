@@ -18,9 +18,10 @@ MonoBehaviour:
   - wooden
   - norse
   middle_keywords:
-  - red
+  - light
   - golden
   - table
+  - garden
   low_keywords:
   - interior
-  - image
+  - red

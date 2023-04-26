@@ -14,6 +14,12 @@ public class Grader
             sum += ps.CalculateScore();
 
             max += ps.GetMaxScorePossible();
+
+
+            if (sum != max)
+            {
+                Debug.Log(ps.GetCurrentPlacardText());
+            }
         }
 
         return sum / max;

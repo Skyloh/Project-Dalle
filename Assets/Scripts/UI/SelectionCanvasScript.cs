@@ -12,10 +12,15 @@ public class SelectionCanvasScript : MonoBehaviour
 
     PaintingScript target;
 
-     private void Update()
+    private void Start()
+    {
+        this.enabled = false;
+    }
+
+    private void Update()
     {
         // in case we pause while on this menu, exit.
-        if (Input.GetAxis("Cancel") != 0)
+        if (Time.timeScale == 0f && Input.GetAxisRaw("Cancel") != 0)
         {
             OnBack();
         }
@@ -38,7 +43,7 @@ public class SelectionCanvasScript : MonoBehaviour
 
         currently_displaying_index = 0;
 
-        UpdateUI();
+        UpdateUI(1);
 
         ToggleCanvas(true);
 
@@ -49,15 +54,14 @@ public class SelectionCanvasScript : MonoBehaviour
     {
         currently_displaying_index = IncrementIndex(1);
 
-
-        UpdateUI();
+        UpdateUI(1);
     }
 
     public void PreviousPainting()
     {
         currently_displaying_index = IncrementIndex(-1);
 
-        UpdateUI();
+        UpdateUI(-1);
     }
 
     public void OnBack()
@@ -96,9 +100,18 @@ public class SelectionCanvasScript : MonoBehaviour
         }
     }
 
-    void UpdateUI()
+    void UpdateUI(int dir)
     {
         PaintingSO p = data.GetPainting(currently_displaying_index);
+
+        // invariant
+        // there are more paintings than painting slots
+        while (p.used)
+        {
+            IncrementIndex(dir);
+
+            p = data.GetPainting(currently_displaying_index);
+        }
 
         painting = p;
 

@@ -13,13 +13,15 @@ public class PlayerDataSO : ScriptableObject
     // list of selectables the player has
     [SerializeField] PaintingSO[] PAINTINGS;
 
-    public void ScramblePaintings()
+    public void ScrambleAndInitPaintings()
     {
         for (int i = 0; i < PAINTINGS.Length; i++)
         {
             int index = Random.Range(0, PAINTINGS.Length);
 
             var cache = PAINTINGS[index];
+
+            PAINTINGS[i].used = PAINTINGS[index].used = false;
 
             PAINTINGS[index] = PAINTINGS[i];
             PAINTINGS[i] = cache;

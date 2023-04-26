@@ -84,11 +84,10 @@ public class DialogueScript : MonoBehaviour
         }
 
         // if somehow we're still rendering but the player becomes enabled, stop.
-        if (rendering && data.IS_PLAYER_ENABLED)
-        {
-            Debug.Log("activated");
-            StopDialogue();
-        }
+        // if (rendering && data.IS_PLAYER_ENABLED)
+        // {
+        //    StopDialogue();
+        //}
 
     }
 

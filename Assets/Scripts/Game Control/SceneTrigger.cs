@@ -1,10 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SceneTrigger : MonoBehaviour
 {
     [SerializeField] string sceneName;
+
+    private void Start()
+    {
+        Cursor.visible = true;
+    }
+
     public void TriggerSceneLoad()
     {
         if (SceneController.instance)

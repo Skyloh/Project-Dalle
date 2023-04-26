@@ -9,7 +9,7 @@ public class ChangeScene : MonoBehaviour, IConvoEvent
 
     public virtual bool Preactivate(ref string[] t, ref string[] f)
     {
-        if (mutate_text != null)
+        if (mutate_text.Length != 0)
         {
             t = mutate_text;
             f = mutate_flair;

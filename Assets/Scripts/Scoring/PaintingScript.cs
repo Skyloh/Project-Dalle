@@ -29,7 +29,14 @@ public class PaintingScript : MonoBehaviour, IRaycastable
 
     public void SetPainting(PaintingSO p)
     {
+        if (paintingSO)
+        {
+            paintingSO.used = false;
+        }
+
         paintingSO = p;
+
+        p.used = true;
 
         painting.sprite = p.painting;
     }

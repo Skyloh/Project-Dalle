@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   painting: {fileID: 21300000, guid: c8099d9b66fa4a547af4c53bc505de96, type: 3}
   high_keywords:
-  - bowl
+  - weird
   - apple
-  - castle
   middle_keywords:
   - drawing
   - sketch

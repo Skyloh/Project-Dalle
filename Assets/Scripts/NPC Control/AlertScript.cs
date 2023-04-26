@@ -5,18 +5,21 @@ using UnityEngine;
 public class AlertScript : MonoBehaviour
 {
     [SerializeField] float anim_speed = 50f;
-    float offset;
+    Quaternion original_rotation;
 
     private void Awake()
     {
-        offset = Random.Range(0f, 3f);
+        original_rotation = transform.rotation;
+    }
+
+    private void OnEnable()
+    {
+        transform.rotation = original_rotation;
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Rotate(anim_speed * Time.deltaTime * transform.up);
-
-        transform.position += 0.1f * Mathf.Sin(Time.realtimeSinceStartup + offset) * Time.deltaTime * transform.up;
     }
 }

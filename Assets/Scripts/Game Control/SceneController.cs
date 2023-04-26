@@ -18,6 +18,7 @@ public class SceneController : MonoBehaviour
     public static SceneController instance;
 
     AsyncOperation load;
+    bool loading;
 
     void Start()
     {
@@ -40,6 +41,13 @@ public class SceneController : MonoBehaviour
 
     public void ChangeScene(string scene)
     {
+        if (loading)
+        {
+            return;
+        }
+
+        loading = true;
+
         gameObject.SetActive(true);
 
         fillImage.fillAmount = 0f;
@@ -84,6 +92,8 @@ public class SceneController : MonoBehaviour
         gameObject.SetActive(false);
 
         data.IS_PLAYER_ENABLED = true;
+
+        loading = false;
     }
 
     private IEnumerator IELerpFillImage()
