@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ab5977eaef86a4385ce99fef4b1b7a, type: 3}
   m_Name: lightcomingdownfrom
   m_EditorClassIdentifier: 
-  description: knight, light, blue, garden, weird, painting, robot, hill, clouds,
-    starry.
+  description: knight, light, blue, starry, garden, weird, painting, robot, hill,
+    clouds, forest.

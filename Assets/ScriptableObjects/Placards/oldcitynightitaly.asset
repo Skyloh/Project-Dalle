@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ab5977eaef86a4385ce99fef4b1b7a, type: 3}
   m_Name: oldcitynightitaly
   m_EditorClassIdentifier: 
-  description: night, mountains, blue, old, massive, painting, moon, rocks, ruins,
+  description: night, mountains, ruins, blue, old, massive, painting, moon, rocks,
     starry sky, black, light.
