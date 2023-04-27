@@ -122,7 +122,7 @@ public class SelectionCanvasScript : MonoBehaviour
     {
         PaintingSO p = data.GetPainting(currently_displaying_index);
 
-        if (!p.CheckIfEmpty())
+        if (!p.CheckIfEmpty() && !target.IsIdentical(p))
         {
             background.enabled = false;
 

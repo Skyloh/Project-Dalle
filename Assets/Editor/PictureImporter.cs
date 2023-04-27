@@ -8,6 +8,12 @@ public class PictureImporter : AssetPostprocessor
     {
         TextureImporter importer = (TextureImporter)assetImporter;
 
+        if (!importer.assetPath.Contains("DALL"))
+        {
+            Debug.Log("stopped executing " + importer.assetPath);
+            return;
+        }
+
         importer.textureType = TextureImporterType.Sprite;
 
         importer.maxTextureSize = 1024;
@@ -19,7 +25,7 @@ public class PictureImporter : AssetPostprocessor
 
         if (!importer.assetPath.Contains("DALL"))
         {
-            Debug.Log("stopped");
+            Debug.Log("stopped executing " + importer.assetPath);
             return;
         }
 

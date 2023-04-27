@@ -188,7 +188,7 @@ public class NPCController : MonoBehaviour
         dir_to_other -= transform.position;
         dir_to_other.y = 0;
 
-        return Vector3.Dot(transform.forward, dir_to_other) < -0.4f * (interestTrigger.radius);
+        return Vector3.Dot(transform.forward, dir_to_other) < -0.4f;// * (interestTrigger.radius);
     }
 
     IEnumerator IEObserve()

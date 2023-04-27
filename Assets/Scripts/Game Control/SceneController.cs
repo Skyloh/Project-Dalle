@@ -87,11 +87,11 @@ public class SceneController : MonoBehaviour
 
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(build_name));
 
+        data.IS_PLAYER_ENABLED = true;
+
         yield return StartCoroutine(IEFadeToColor(Color.clear, 0.75f));
 
         gameObject.SetActive(false);
-
-        data.IS_PLAYER_ENABLED = true;
 
         loading = false;
     }

@@ -47,6 +47,11 @@ public class PaintingScript : MonoBehaviour, IRaycastable
         painting.sprite = p.painting;
     }
 
+    public bool IsIdentical(PaintingSO other)
+    {
+        return other.high_keywords.Equals(paintingSO.high_keywords);
+    }
+
     public string GetCurrentPlacardText()
     {
         return placardSO.description;
