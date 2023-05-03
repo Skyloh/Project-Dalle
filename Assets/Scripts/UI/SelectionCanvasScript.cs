@@ -39,6 +39,8 @@ public class SelectionCanvasScript : MonoBehaviour
 
     void ToggleCanvas(bool state)
     {
+        Cursor.visible = state;
+
         canvas.SetActive(state);
 
         foreach (UISpriteAnimatorScript script in uisas)
@@ -46,7 +48,7 @@ public class SelectionCanvasScript : MonoBehaviour
             script.enabled = state;
         }
 
-        background.enabled = true;
+        background.enabled = state;
     }
 
     public void StartCanvas(PaintingScript caller)

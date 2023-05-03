@@ -3370,7 +3370,7 @@ PrefabInstance:
     - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
         type: 3}
       propertyPath: dialogue.Array.data[0].dialogue.Array.data[2]
-      value: One of those two clauses is right, but I don't think I like either option.
+      value: ...Didn't realize the medium was so self-destructive.
       objectReference: {fileID: 0}
     - target: {fileID: 996834067793601525, guid: 3a9e5bc257423bb4186d2ace32ec1a33,
         type: 3}
